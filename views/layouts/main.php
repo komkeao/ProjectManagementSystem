@@ -171,15 +171,15 @@ AppAsset::register($this);
 
     </header>
     <!-- /HEADER -->
-
+    <div class="container">
     <section id="middle">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
-        <div class="col-md-12" style="padding: 20px">
+
             <?= $content ?>
-        </div>
     </section>
+    </div>
 
 </div>
 
