@@ -2,52 +2,65 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'หน้าหลัก';
 ?>
-<div class="site-index">
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+                    <!-- Collapsible -->
+                    <div id="panel-misc-portlet-r1" class="panel panel-clean">
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
+                        <div class="panel-heading">
+            <span class="elipsis"><!-- panel title --><span class="fa fa-newspaper-o"></span>
+             <strong>ข่าวสาร</strong>
+            </span>
 
-    <div class="body-content">
 
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+                            <!-- right options -->
+                            <ul class="options pull-right list-inline">
+                                <li><a href="#" class="opt panel_colapse" data-toggle="tooltip" title="Colapse"
+                                       data-placement="bottom"></a></li>
+                            </ul>
+                            <!-- /right options -->
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                        </div>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+                        <!-- panel content -->
+                        <div class="panel-body">
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+                            Collapsible portlet only - no special code needed!
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                        </div>
+                        <!-- /panel content -->
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
+                    </div>
+                    <!-- /Collapsible -->
+                    <!-- Collapsible -->
+                    <div id="panel-misc-portlet-r1" class="panel panel-clean">
 
-    </div>
-</div>
+                        <div class="panel-heading">
+                            <span class="elipsis"><span class="fa fa-commenting-o"></span></span> <strong>เว็บบอร์ด</strong></span>
+                            <!-- right options -->
+                            <ul class="options pull-right list-inline">
+                                <li><a href="#" class="opt panel_colapse" data-toggle="tooltip" title="Colapse"
+                                       data-placement="bottom"></a></li>
+                            </ul>
+                            <!-- /right options -->
+                        </div>
+
+                        <!-- panel content -->
+                        <div class="panel-body">
+
+
+                            Collapsible portlet only - no special code needed!
+
+                        </div>
+                        <!-- /panel content -->
+
+                    </div>
+                    <!-- /Collapsible -->
+
+                </div>
+                <!-- /LEFT -->
+
+

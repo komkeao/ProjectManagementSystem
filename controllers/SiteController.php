@@ -63,7 +63,10 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
-
+    public function actionMain()
+    {
+        return $this->render('about');
+    }
     /**
      * Login action.
      *

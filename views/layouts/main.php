@@ -26,86 +26,74 @@ AppAsset::register($this);
 
     <!-- WEB FONTS -->
     <link href="" rel="stylesheet" type="text/css"/>
-
-
 </head>
-<body>
+<body class="smoothscroll enable-animation">
 <?php $this->beginBody() ?>
-
-<div id="wrapper">
-    <!--
+<!--
                     ASIDE
                     Keep it outside of #wrapper (responsive purpose)
                 -->
-    <aside id="aside">
-        <!--
-            Always open:
-            <li class="active alays-open">
+<aside id="aside">
+    <nav id="sideNav"><!-- MAIN MENU -->
+        <ul class="nav nav-list">
+            <li><!-- dashboard -->
+                <a class="dashboard" href="/"><!-- warning - url used by default by ajax (if eneabled) -->
+                    <i class="main-icon fa fa-home"></i> <span>หน้าแรก</span>
+                </a>
+            </li>
+            <li><!-- dashboard -->
+                <a class="" href="/site/main"><!-- warning - url used by default by ajax (if eneabled) -->
+                    <i class="main-icon fa fa-newspaper-o"></i> <span>ข่าวสาร</span>
+                </a>
+            </li>
+            <li><!-- dashboard -->
+                <a class="" href="/"><!-- warning - url used by default by ajax (if eneabled) -->
+                    <i class="main-icon fa fa-wechat"></i> <span>เว็บบอร์ด</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-menu-arrow pull-right"></i>
+                    <i class="main-icon fa fa-file-text-o"></i> <span>โครงาน</span>
+                </a>
+                <ul><!-- submenus -->
+                    <li><a href="/">รายชื่อโครงงาน</a></li>
+                    <li><a href="/">โปสเตอร์โครงงาน</a></li>
 
-            LABELS:
-                <span class="label label-danger pull-right">1</span>
-                <span class="label label-default pull-right">1</span>
-                <span class="label label-warning pull-right">1</span>
-                <span class="label label-success pull-right">1</span>
-                <span class="label label-info pull-right">1</span>
-        -->
-        <nav id="sideNav"><!-- MAIN MENU -->
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-menu-arrow pull-right"></i>
+                    <i class="main-icon fa fa-users"></i> <span>รายชื่อ</span>
+                </a>
+                <ul><!-- submenus -->
+                    <li><a href="/">รายชื่ออาจารย์</a></li>
+                    <li><a href="/">รายชื่อนักศึกษา</a></li>
+                    <li><a href="/">รายชื่อกรรมการคุมสอบ</a></li>
+                    <li><a href="/">นักศึกษาที่ยังไม่เพิ่มโครงงาน</a></li>
+                    <li><a href="/">จำนวนโครงงานต่ออาจารย์ที่ปรึกาา</a></li>
+
+                </ul>
+            </li>
+
+            <!-- SECOND MAIN LIST -->
+            <h3>MORE</h3>
             <ul class="nav nav-list">
                 <li><!-- dashboard -->
-                    <a class="dashboard" href="/"><!-- warning - url used by default by ajax (if eneabled) -->
-                        <i class="main-icon fa fa-dashboard"></i> <span>หน้าแรก</span>
-                    </a>
-                </li>
-                <li><!-- dashboard -->
                     <a class="" href="/"><!-- warning - url used by default by ajax (if eneabled) -->
-                        <i class="main-icon fa fa-dashboard"></i> <span>ข่าวสาร</span>
+                        <i class="main-icon fa fa-download"></i> <span>ตาวน์โหลด</span>
                     </a>
                 </li>
-                <li><!-- dashboard -->
-                    <a class="" href="/"><!-- warning - url used by default by ajax (if eneabled) -->
-                        <i class="main-icon fa fa-dashboard"></i> <span>เว็บบอร์ด</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-menu-arrow pull-right"></i>
-                        <i class="main-icon fa fa-bar-chart-o"></i> <span>โครงาน</span>
-                    </a>
-                    <ul><!-- submenus -->
-                        <li><a href="/">รายชื่อโครงงาน</a></li>
-                        <li><a href="/">โปสเตอร์โครงงาน</a></li>
+            </ul>
 
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-menu-arrow pull-right"></i>
-                        <i class="main-icon fa fa-bar-chart-o"></i> <span>รายชื่อ</span>
-                    </a>
-                    <ul><!-- submenus -->
-                        <li><a href="/">รายชื่ออาจารย์</a></li>
-                        <li><a href="/">รายชื่อนักศึกษา</a></li>
-                        <li><a href="/">รายชื่อกรรมการคุมสอบ</a></li>
-                        <li><a href="/">นักศึกษาที่ยังไม่เพิ่มโครงงาน</a></li>
-                        <li><a href="/">จำนวนโครงงานต่ออาจารย์ที่ปรึกาา</a></li>
+    </nav>
 
-                    </ul>
-                </li>
-                <!-- SECOND MAIN LIST -->
-                <h3>MORE</h3>
-                <ul class="nav nav-list">
-                    <li><!-- dashboard -->
-                        <a class="" href="/"><!-- warning - url used by default by ajax (if eneabled) -->
-                            <i class="main-icon fa fa-dashboard"></i> <span>ตาวน์โหลด</span>
-                        </a>
-                    </li>
-                </ul>
+    <span id="asidebg"><!-- aside fixed background --></span>
+</aside>
+<!-- /ASIDE -->
+<div id="wrapper">
 
-        </nav>
-
-        <span id="asidebg"><!-- aside fixed background --></span>
-    </aside>
-    <!-- /ASIDE -->
 
 
     <!-- HEADER -->
@@ -115,8 +103,9 @@ AppAsset::register($this);
         <button id="mobileMenuBtn"></button>
 
         <!-- Logo -->
-        <span class="logo pull-left">
-					<img src="/images/logo_light.png" alt="admin panel" height="35"/>
+        <span class="logo pull-left" style="font-size:x-large;color: lightgoldenrodyellow">
+            E-Project
+            <!--					<img src="/images/logo_light.png" alt="admin panel" height="35"/>-->
 				</span>
 
         <form method="get" action="page-search.html" class="search pull-left hidden-xs">
@@ -135,7 +124,7 @@ AppAsset::register($this);
                         <img class="user-avatar" alt="" src="/images/noavatar.jpg" height="34"/>
                         <span class="user-name">
 									<span class="hidden-xs">
-										John Doe <i class="fa fa-angle-down"></i>
+										เข้าสู่ระบบ <i class="fa fa-angle-down"></i>
 									</span>
 								</span>
                     </a>
@@ -171,23 +160,49 @@ AppAsset::register($this);
 
     </header>
     <!-- /HEADER -->
-    <div class="container">
+    <!--    <div class="container">-->
     <section id="middle">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
+        <!-- page title -->
+        <header id="page-header">
+            <h1><?= Html::encode($this->title) ?></h1>
+            <!--    <ol class="breadcrumb">-->
+            <!--        <li><a href="#">หน้าหลัก</a></li>-->
+            <!--        <li class="active">Modals</li>-->
+            <!--    </ol>-->
+        </header>
+        <div id="content" class="padding-20">
 
-            <?= $content ?>
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <div class="row">
+
+                        <!-- LEFT -->
+                        <div class="col-md-9">
+                            <?= Breadcrumbs::widget([
+                                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                            ]) ?>
+
+                            <?= $content ?>
+
+                        <?php $this->beginContent('@app/views/fragments/rightPanel.php'); ?>
+                        <?php $this->endContent(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
-    </div>
+    <!--    </div>-->
 
 </div>
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <!--        <p class="pull-left">&copy; My Company --><? //= date('Y') ?><!--</p>-->
+        <!---->
+        <!--        <p class="pull-right">--><? //= Yii::powered() ?><!--</p>-->
     </div>
 </footer>
 
