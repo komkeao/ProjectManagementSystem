@@ -6,6 +6,7 @@
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
+use yii\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
@@ -165,6 +166,19 @@ AppAsset::register($this);
         <!-- page title -->
         <header id="page-header">
             <h1><?= Html::encode($this->title) ?></h1>
+
+            <?= Breadcrumbs::widget([
+                //'itemTemplate'=>"<li><i>{link}</i></li>\n",
+                'homeLink'=>[
+                    'label' => Yii::t('yii', 'หน้าหลัก'),
+                    'url' => Yii::$app->homeUrl,
+                ],
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [[
+                    'label' => '',
+                    'url' => ['site/index'],
+                    'template' => "<li><b>{link}</b></li>\n", // template for this link only
+                ]]
+            ]) ?>
             <!--    <ol class="breadcrumb">-->
             <!--        <li><a href="#">หน้าหลัก</a></li>-->
             <!--        <li class="active">Modals</li>-->
@@ -179,10 +193,23 @@ AppAsset::register($this);
 
                         <!-- LEFT -->
                         <div class="col-md-9">
-                            <?= Breadcrumbs::widget([
-                                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                            ]) ?>
 
+
+<!--                            --><?php //echo Menu::widget([
+//                                'items' => [
+//                                    // Important: you need to specify url as 'controller/action',
+//                                    // not just as 'controller' even if default action is used.
+//                                    ['label' => 'Home', 'url' => ['site/index']],
+//                                    // 'Products' menu item will be selected as long as the route is 'product/index'
+//                                    ['label' => 'Products', 'url' => ['product/index'], 'items' => [
+//                                        ['label' => 'New Arrivals', 'url' => ['product/index', 'tag' => 'new']],
+//                                        ['label' => 'Most Popular', 'url' => ['product/index', 'tag' => 'popular']],
+//                                    ]],
+//                                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
+//                                ],
+//                                'activeCssClass'=>'active ',
+//
+//                            ]);?>
                             <?= $content ?>
 
                         <?php $this->beginContent('@app/views/fragments/rightPanel.php'); ?>
