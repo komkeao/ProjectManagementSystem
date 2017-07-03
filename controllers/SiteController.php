@@ -67,14 +67,6 @@ class SiteController extends Controller
     {
         return $this->render('news');
     }
-    public function actionฺBoard()
-    {
-        return $this->render('board');
-    }
-    public function actionฺDownload()
-    {
-        return $this->render('download');
-    }
     /**
      * Login action.
      *
@@ -94,7 +86,14 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
-
+    public function actionBoard()
+    {
+        return $this->render('board');
+    }
+    public function actionDownload()
+    {
+        return $this->render('download');
+    }
     /**
      * Logout action.
      *
@@ -130,8 +129,5 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
+
 }

@@ -4,8 +4,6 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
 use yii\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
@@ -30,10 +28,7 @@ AppAsset::register($this);
 </head>
 <body class="smoothscroll enable-animation">
 <?php $this->beginBody() ?>
-<!--
-                    ASIDE
-                    Keep it outside of #wrapper (responsive purpose)
-                -->
+<!--  ASIDE -->
 <aside id="aside">
     <nav id="sideNav"><!-- MAIN MENU -->
 
@@ -41,7 +36,7 @@ AppAsset::register($this);
             'items' => [
                 ['label' => '<i class="main-icon fa fa-home"></i> <span>หน้าหลัก</span>', 'url' => ['site/index']],
                 ['label' => '<i class="main-icon fa fa-newspaper-o"></i> <span>ข่าวสาร</span>', 'url' => ['site/news']],
-                ['label' => '<i class="main-icon fa fa-wechat"></i> <span>เว็บบอร์ด</span>', 'url' => ['site/board']],
+                ['label' => '<i class="main-icon fa fa-wechat"></i> <span>เว็บบอร์ด</span>', 'url' => ['board/']],
                 ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-file-text-o"></i> <span>โครงงาน</span>',
                     'template'=>'<a href="#">{label}</a>',
                     'url' => ['#'],'items' => [
@@ -66,12 +61,12 @@ AppAsset::register($this);
         ]); ?>
 
     </nav>
+    <span id="asidebg"><!-- aside fixed background --></span>
 </aside>
+<!-- END ASIDE -->
 
 
 <div id="wrapper">
-
-
     <!-- HEADER -->
     <header id="header">
 
@@ -84,11 +79,13 @@ AppAsset::register($this);
             <!--					<img src="/images/logo_light.png" alt="admin panel" height="35"/>-->
 				</span>
 
+        <!-- SEARCH -->
         <form method="get" action="page-search.html" class="search pull-left hidden-xs">
             <input type="text" class="form-control" name="k" placeholder="Search for something..."/>
         </form>
 
         <nav>
+            <!-- END SEARCH -->
 
             <!-- OPTIONS LIST -->
             <ul class="nav pull-right">
@@ -128,15 +125,13 @@ AppAsset::register($this);
                     </ul>
                 </li>
                 <!-- /USER OPTIONS -->
-
             </ul>
             <!-- /OPTIONS LIST -->
-
         </nav>
-
     </header>
     <!-- /HEADER -->
-    <!--    <div class="container">-->
+
+    <!-- MIDDLE -->
     <section id="middle">
         <!-- page title -->
         <header id="page-header">
@@ -170,25 +165,28 @@ AppAsset::register($this);
 
 
                         </div>
+                        <!-- END LEFT -->
+                        <!-- RIGHT -->
                         <?php $this->beginContent('@app/views/fragments/rightPanel.php'); ?>
                         <?php $this->endContent(); ?>
+                        <!-- END RIGHT -->
                     </div>
                 </div>
             </div>
         </div>
 
     </section>
-    <!--    </div>-->
+    <!-- END MIDDLE -->
 
 </div>
-
-<footer class="footer">
-    <div class="container">
-        <!--        <p class="pull-left">&copy; My Company --><? //= date('Y') ?><!--</p>-->
-        <!---->
-        <!--        <p class="pull-right">--><? //= Yii::powered() ?><!--</p>-->
-    </div>
-</footer>
+<!---->
+<!--<footer class="footer">-->
+<!--    <div class="container">-->
+<!--                <p class="pull-left">&copy; My Company --><?// //= date('Y') ?><!--</p>-->
+<!---->
+<!--                <p class="pull-right">--><?// //= Yii::powered() ?><!--</p>-->
+<!--    </div>-->
+<!--</footer>-->
 
 <?php $this->endBody() ?>
 <!-- JAVASCRIPT FILES -->
