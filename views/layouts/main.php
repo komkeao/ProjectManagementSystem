@@ -36,65 +36,40 @@ AppAsset::register($this);
                 -->
 <aside id="aside">
     <nav id="sideNav"><!-- MAIN MENU -->
-        <ul class="nav nav-list">
-            <li><!-- dashboard -->
-                <a class="dashboard" href="/"><!-- warning - url used by default by ajax (if eneabled) -->
-                    <i class="main-icon fa fa-home"></i> <span>หน้าแรก</span>
-                </a>
-            </li>
-            <li><!-- dashboard -->
-                <a class="" href="/site/main"><!-- warning - url used by default by ajax (if eneabled) -->
-                    <i class="main-icon fa fa-newspaper-o"></i> <span>ข่าวสาร</span>
-                </a>
-            </li>
-            <li><!-- dashboard -->
-                <a class="" href="/"><!-- warning - url used by default by ajax (if eneabled) -->
-                    <i class="main-icon fa fa-wechat"></i> <span>เว็บบอร์ด</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-menu-arrow pull-right"></i>
-                    <i class="main-icon fa fa-file-text-o"></i> <span>โครงาน</span>
-                </a>
-                <ul><!-- submenus -->
-                    <li><a href="/">รายชื่อโครงงาน</a></li>
-                    <li><a href="/">โปสเตอร์โครงงาน</a></li>
 
-                </ul>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-menu-arrow pull-right"></i>
-                    <i class="main-icon fa fa-users"></i> <span>รายชื่อ</span>
-                </a>
-                <ul><!-- submenus -->
-                    <li><a href="/">รายชื่ออาจารย์</a></li>
-                    <li><a href="/">รายชื่อนักศึกษา</a></li>
-                    <li><a href="/">รายชื่อกรรมการคุมสอบ</a></li>
-                    <li><a href="/">นักศึกษาที่ยังไม่เพิ่มโครงงาน</a></li>
-                    <li><a href="/">จำนวนโครงงานต่ออาจารย์ที่ปรึกาา</a></li>
+        <?php echo Menu::widget([
+            'items' => [
+                ['label' => '<i class="main-icon fa fa-home"></i> <span>หน้าหลัก</span>', 'url' => ['site/index']],
+                ['label' => '<i class="main-icon fa fa-newspaper-o"></i> <span>ข่าวสาร</span>', 'url' => ['site/news']],
+                ['label' => '<i class="main-icon fa fa-wechat"></i> <span>เว็บบอร์ด</span>', 'url' => ['site/board']],
+                ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-file-text-o"></i> <span>โครงงาน</span>',
+                    'template'=>'<a href="#">{label}</a>',
+                    'url' => ['#'],'items' => [
+                    ['label' => 'รายชื่อโครงงาน', 'url' => ['product/index']],
+                    ['label' => 'โปสเตอร์โครงงาน', 'url' => ['product/index']],
+                ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-users"></i> <span>รายชื่อ</span>', 'template'=>'<a href="#">{label}</a>','items' => [
+                    ['label' => 'รายชื่ออาจารย์', 'url' => ['product/index']],
+                    ['label' => 'รายชื่อนักศึกษา', 'url' => ['product/index']],
+                    ['label' => 'รายชื่อกรรมการคุมสอบ', 'url' => ['product/index']],
+                    ['label' => 'นักศึกษาที่ยังไม่เพิ่มโครงงาน', 'url' => ['product/index']],
+                    ['label' => 'จำนวนโครงงานต่ออาจารย์ที่ปรึกาา', 'url' => ['product/index']]
+                ]],
+                ['label' => '<i class="main-icon fa fa-download"></i>  <span>ดาวน์โหลด</span>', 'url' => ['site/download']],
+//                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
+            ],
+            'encodeLabels' => false,
+            'options' => [
+                'class' => 'nav nav-list',
+            ],
 
-                </ul>
-            </li>
 
-            <!-- SECOND MAIN LIST -->
-            <h3>MORE</h3>
-            <ul class="nav nav-list">
-                <li><!-- dashboard -->
-                    <a class="" href="/"><!-- warning - url used by default by ajax (if eneabled) -->
-                        <i class="main-icon fa fa-download"></i> <span>ตาวน์โหลด</span>
-                    </a>
-                </li>
-            </ul>
+        ]); ?>
 
     </nav>
-
-    <span id="asidebg"><!-- aside fixed background --></span>
 </aside>
-<!-- /ASIDE -->
-<div id="wrapper">
 
+
+<div id="wrapper">
 
 
     <!-- HEADER -->
@@ -169,7 +144,7 @@ AppAsset::register($this);
 
             <?= Breadcrumbs::widget([
                 //'itemTemplate'=>"<li><i>{link}</i></li>\n",
-                'homeLink'=>[
+                'homeLink' => [
                     'label' => Yii::t('yii', 'หน้าหลัก'),
                     'url' => Yii::$app->homeUrl,
                 ],
@@ -179,10 +154,7 @@ AppAsset::register($this);
                     'template' => "<li><b>{link}</b></li>\n", // template for this link only
                 ]]
             ]) ?>
-            <!--    <ol class="breadcrumb">-->
-            <!--        <li><a href="#">หน้าหลัก</a></li>-->
-            <!--        <li class="active">Modals</li>-->
-            <!--    </ol>-->
+
         </header>
         <div id="content" class="padding-20">
 
@@ -194,27 +166,12 @@ AppAsset::register($this);
                         <!-- LEFT -->
                         <div class="col-md-9">
 
-
-<!--                            --><?php //echo Menu::widget([
-//                                'items' => [
-//                                    // Important: you need to specify url as 'controller/action',
-//                                    // not just as 'controller' even if default action is used.
-//                                    ['label' => 'Home', 'url' => ['site/index']],
-//                                    // 'Products' menu item will be selected as long as the route is 'product/index'
-//                                    ['label' => 'Products', 'url' => ['product/index'], 'items' => [
-//                                        ['label' => 'New Arrivals', 'url' => ['product/index', 'tag' => 'new']],
-//                                        ['label' => 'Most Popular', 'url' => ['product/index', 'tag' => 'popular']],
-//                                    ]],
-//                                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
-//                                ],
-//                                'activeCssClass'=>'active ',
-//
-//                            ]);?>
                             <?= $content ?>
 
+
+                        </div>
                         <?php $this->beginContent('@app/views/fragments/rightPanel.php'); ?>
                         <?php $this->endContent(); ?>
-                        </div>
                     </div>
                 </div>
             </div>
