@@ -14,7 +14,9 @@ use yii\web\Controller;
 class TestController extends Controller
 {
     public function actionIndex(){
-        return $this->render('index');
+        $data = "test";
+
+        return $this->render('index',['data'=>$data]);
     }
 
 }

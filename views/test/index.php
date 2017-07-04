@@ -6,6 +6,7 @@ $this->title = 'ทดสอบ';
 //$this->params['breadcrumbs'][] = ['label' => 'Employees', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<?php echo $data?>
 
 
 
