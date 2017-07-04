@@ -36,14 +36,14 @@ AppAsset::register($this);
             'items' => [
                 ['label' => '<i class="main-icon fa fa-home"></i> <span>หน้าหลัก</span>', 'url' => ['site/index']],
                 ['label' => '<i class="main-icon fa fa-newspaper-o"></i> <span>ข่าวสาร</span>', 'url' => ['site/news']],
-                ['label' => '<i class="main-icon fa fa-wechat"></i> <span>เว็บบอร์ด</span>', 'url' => ['board/']],
+                ['label' => '<i class="main-icon fa fa-wechat"></i> <span>เว็บบอร์ด</span>', 'url' => ['board/index']],
                 ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-file-text-o"></i> <span>โครงงาน</span>',
                     'template'=>'<a href="#">{label}</a>',
                     'url' => ['#'],'items' => [
-                    ['label' => 'รายชื่อโครงงาน', 'url' => ['product/index']],
+                    ['label' => 'รายชื่อโครงงาน', 'url' => ['project/index']],
                     ['label' => 'โปสเตอร์โครงงาน', 'url' => ['product/index']],
                 ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-users"></i> <span>รายชื่อ</span>', 'template'=>'<a href="#">{label}</a>','items' => [
-                    ['label' => 'รายชื่ออาจารย์', 'url' => ['product/index']],
+                    ['label' => 'รายชื่ออาจารย์', 'url' => ['personnel/teachers']],
                     ['label' => 'รายชื่อนักศึกษา', 'url' => ['product/index']],
                     ['label' => 'รายชื่อกรรมการคุมสอบ', 'url' => ['product/index']],
                     ['label' => 'นักศึกษาที่ยังไม่เพิ่มโครงงาน', 'url' => ['product/index']],
@@ -53,11 +53,10 @@ AppAsset::register($this);
 //                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
             ],
             'encodeLabels' => false,
+            'activateParents'=>true,
             'options' => [
                 'class' => 'nav nav-list',
-            ],
-
-
+            ]
         ]); ?>
 
     </nav>
