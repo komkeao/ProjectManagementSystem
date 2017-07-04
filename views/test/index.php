@@ -8,7 +8,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php
 foreach ($data as $item){
-    echo $item->name;
+    echo $item->projectType->name;
 }
 ?>
 
