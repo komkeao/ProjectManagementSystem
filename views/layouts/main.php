@@ -35,13 +35,13 @@ AppAsset::register($this);
         <?php echo Menu::widget([
             'items' => [
                 ['label' => '<i class="main-icon fa fa-home"></i> <span>หน้าหลัก</span>', 'url' => ['site/index']],
-                ['label' => '<i class="main-icon fa fa-newspaper-o"></i> <span>ข่าวสาร</span>', 'url' => ['site/news']],
+                ['label' => '<i class="main-icon fa fa-newspaper-o"></i> <span>ข่าวสาร</span>', 'url' => ['news/index']],
                 ['label' => '<i class="main-icon fa fa-wechat"></i> <span>เว็บบอร์ด</span>', 'url' => ['board/index']],
                 ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-file-text-o"></i> <span>โครงงาน</span>',
                     'template'=>'<a href="#">{label}</a>',
                     'url' => ['#'],'items' => [
                     ['label' => 'รายชื่อโครงงาน', 'url' => ['project/index']],
-                    ['label' => 'โปสเตอร์โครงงาน', 'url' => ['product/index']],
+                    ['label' => 'โปสเตอร์โครงงาน', 'url' => ['project/poster']],
                 ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-users"></i> <span>รายชื่อ</span>', 'template'=>'<a href="#">{label}</a>','items' => [
                     ['label' => 'รายชื่ออาจารย์', 'url' => ['personnel/teachers']],
                     ['label' => 'รายชื่อนักศึกษา', 'url' => ['product/index']],
@@ -49,7 +49,7 @@ AppAsset::register($this);
                     ['label' => 'นักศึกษาที่ยังไม่เพิ่มโครงงาน', 'url' => ['product/index']],
                     ['label' => 'จำนวนโครงงานต่ออาจารย์ที่ปรึกาา', 'url' => ['product/index']]
                 ]],
-                ['label' => '<i class="main-icon fa fa-download"></i>  <span>ดาวน์โหลด</span>', 'url' => ['site/download']],
+                ['label' => '<i class="main-icon fa fa-download"></i>  <span>ดาวน์โหลด</span>', 'url' => ['download/index']],
 //                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
             ],
             'encodeLabels' => false,
@@ -166,8 +166,10 @@ AppAsset::register($this);
                         </div>
                         <!-- END LEFT -->
                         <!-- RIGHT -->
+                        <div class="col-md-3 sidebar">
                         <?php $this->beginContent('@app/views/fragments/rightPanel.php'); ?>
                         <?php $this->endContent(); ?>
+                        </div>
                         <!-- END RIGHT -->
                     </div>
                 </div>

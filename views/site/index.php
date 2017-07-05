@@ -28,8 +28,25 @@ $this->title = 'หน้าหลัก';
     <!-- panel content -->
     <div class="panel-body">
 
+        <a href="#">
+            <div class="alert alert-bordered-dotted margin-bottom-3 padding-3"><!-- DEFAULT -->
+                <strong> การส่งเอกสารก่อนสอบ Midterm 2557 </strong>
+                <span style="color: black">- โดย ชิตสุธา สุ่มเล็ก (2015-03-02 12:09:33)</span>
 
-        Collapsible portlet only - no special code needed!
+            </div>
+        </a>
+        <a href="#">
+            <div class="alert alert-bordered-dotted margin-bottom-3 padding-3"><!-- DEFAULT -->
+                <strong >  ให้นศ.แก้ไขชื่อที่ปรึกษาและเพิ่มหัวข้อโครงงานภายใน </strong>
+                <span style="color: black">- โดย ชิตสุธา สุ่มเล็ก (2015-03-02 12:09:33)</span>
+            </div>
+        </a>
+        <a href="#">
+            <div class="alert alert-bordered-dotted margin-bottom-3 padding-3"><!-- DEFAULT -->
+                <strong > กำหนดวันสอบ Midterm (ความก้าวหน้าครั้งที่ 2) </strong>
+                <span style="color: black">- โดย ชิตสุธา สุ่มเล็ก (2015-03-02 12:09:33)</span>
+            </div>
+        </a>
 
     </div>
     <!-- /panel content -->
@@ -53,7 +70,20 @@ $this->title = 'หน้าหลัก';
     <div class="panel-body">
 
 
-        Collapsible portlet only - no special code needed!
+        <a href="#">
+            <div class="alert alert-bordered-dotted margin-bottom-3 padding-3"><!-- DEFAULT -->
+                <strong> กำหนดวันสอบ Midterm (ความก้าวหน้าครั้งที่ 2)</strong>
+                <span style="color: black">- โดย ชิตสุธา สุ่มเล็ก (2015-03-02 12:09:33)</span>
+
+            </div>
+        </a>
+
+        <a href="site/index">
+            <div class="alert alert-bordered-dotted margin-bottom-3 padding-3"><!-- DEFAULT -->
+                <strong >  การส่งเอกสารก่อนสอบ Midterm 2557 </strong>
+                <span style="color: black">- โดย ชิตสุธา สุ่มเล็ก (2015-03-02 12:09:33)</span>
+            </div>
+        </a>
 
     </div>
     <!-- /panel content -->

@@ -8,20 +8,14 @@
 use yii\helpers\Html;
 
 $this->title = $name;
+
 ?>
 <div class="site-error">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
-    </div>
-
-    <p>
-        The above error occurred while the Web server was processing your request.
+    <p class="lead">
+            <h1><?= Html::encode($this->title) ?></h1>
+        <strong>Oops!</strong> <?= nl2br(Html::encode($message)) ?><br />
+        We are fixing it! Please come back in a while.
     </p>
-    <p>
-        Please contact us if you think this is a server error. Thank you.
-    </p>
+
 
 </div>
