@@ -1,6 +1,3 @@
-<!-- RIGHT -->
-<div class="col-md-3 sidebar">
-
     <!-- IMAGES -->
     <h3>Recent Images</h3>
     <ul class="list-inline aside-thumbs clearfix">
@@ -118,5 +115,3 @@
         </div>
     </div>
     <!-- /TABS -->
-</div>
-<!-- /RIGHT -->
