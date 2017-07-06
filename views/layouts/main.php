@@ -59,10 +59,10 @@ AppAsset::register($this);
                     ['label' => 'ภาพรวมสถิติโครงงาน', 'url' => ['project/stat'],'visible'=>$userType<=1],
                 ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-users"></i> <span>รายชื่อ</span>', 'template'=>'<a href="#">{label}</a>','items' => [
                     ['label' => 'รายชื่ออาจารย์', 'url' => ['personnel/teachers']],
-                    ['label' => 'รายชื่อนักศึกษา', 'url' => ['product/index']],
-                    ['label' => 'รายชื่อกรรมการคุมสอบ', 'url' => ['product/index']],
-                    ['label' => 'นักศึกษาที่ยังไม่เพิ่มโครงงาน', 'url' => ['product/index']],
-                    ['label' => 'จำนวนโครงงานต่ออาจารย์ที่ปรึกษา', 'url' => ['product/index']]
+                    ['label' => 'รายชื่อนักศึกษา', 'url' => ['personnel/students']],
+                    ['label' => 'รายชื่อกรรมการคุมสอบ', 'url' => ['personnel/board']],
+                    ['label' => 'นักศึกษาที่ยังไม่เพิ่มโครงงาน', 'url' => ['personnel/unsent-student']],
+                    ['label' => 'จำนวนโครงงานต่ออาจารย์ที่ปรึกษา', 'url' => ['personnel/project-per-teacher']]
                 ]],
                 ['label' => '<i class="main-icon fa fa-download"></i>  <span>ดาวน์โหลด</span>', 'url' => ['download/index']],
 //                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],

@@ -17,4 +17,20 @@ class PersonnelController extends Controller
     {
         return $this->render('teachers');
     }
+    public function actionStudents()
+    {
+        return $this->render('students');
+    }
+    public function actionBoard()
+    {
+        return $this->render('board');
+    }
+    public function actionUnsentStudent()
+    {
+        return $this->render('unsent-student');
+    }
+    public function actionProjectPerTeacher()
+    {
+        return $this->render('project-per-teacher');
+    }
 }
