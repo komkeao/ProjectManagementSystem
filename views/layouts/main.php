@@ -7,7 +7,7 @@ use yii\helpers\Html;
 use yii\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
-$userType=3;
+$userType=0;
 //0 admin
 //1 teachers
 //2 student
@@ -40,7 +40,7 @@ AppAsset::register($this);
             'items' => [
                 ['label' => '<i class="main-icon fa fa-home"></i> <span>หน้าหลัก</span>', 'url' => ['site/index']],
                 ['label' => '<i class="main-icon fa fa-newspaper-o"></i> <span>ข่าวสาร</span>', 'url' => ['news/index'],'visible'=>$userType>=2],
-                ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-file-text-o"></i> <span>ข่าวสาร</span>',
+                ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-newspaper-o"></i> <span>ข่าวสาร</span>',
                     'template'=>'<a href="#">{label}</a>',
                     'url' => ['#'],'visible'=>$userType==1||$userType==0,'items' => [
                     ['label' => 'ข่าว', 'url' => ['news/index']],
@@ -55,13 +55,14 @@ AppAsset::register($this);
                     ['label' => 'โปสเตอร์โครงงาน', 'url' => ['project/poster']],
                     ['label' => 'เพิ่มโครงงาน', 'url' => ['project/add'],'visible'=>$userType==2],
                     ['label' => 'แก้ไขข้อมูลโครงงาน', 'url' => ['project/edit'],'visible'=>$userType==2],
+                    ['label' => 'อัพโหลดเอกสารโครงงาน', 'url' => ['project/document'],'visible'=>$userType==2],
                     ['label' => 'ภาพรวมสถิติโครงงาน', 'url' => ['project/stat'],'visible'=>$userType<=1],
                 ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-users"></i> <span>รายชื่อ</span>', 'template'=>'<a href="#">{label}</a>','items' => [
                     ['label' => 'รายชื่ออาจารย์', 'url' => ['personnel/teachers']],
                     ['label' => 'รายชื่อนักศึกษา', 'url' => ['product/index']],
                     ['label' => 'รายชื่อกรรมการคุมสอบ', 'url' => ['product/index']],
                     ['label' => 'นักศึกษาที่ยังไม่เพิ่มโครงงาน', 'url' => ['product/index']],
-                    ['label' => 'จำนวนโครงงานต่ออาจารย์ที่ปรึกาา', 'url' => ['product/index']]
+                    ['label' => 'จำนวนโครงงานต่ออาจารย์ที่ปรึกษา', 'url' => ['product/index']]
                 ]],
                 ['label' => '<i class="main-icon fa fa-download"></i>  <span>ดาวน์โหลด</span>', 'url' => ['download/index']],
 //                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
@@ -71,8 +72,39 @@ AppAsset::register($this);
             'options' => [
                 'class' => 'nav nav-list',
             ]
-        ]); ?>
-
+        ]);
+        if($userType==0){
+        ?>
+        <h3>ผู้ดูแลระบบ</h3>
+        <?php
+            echo Menu::widget([
+                'items' => [
+                    ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-user"></i> <span>นักศึกษา</span>',
+                        'template'=>'<a href="#">{label}</a>',
+                        'url' => ['#'],'items' => [
+                        ['label' => 'รีเซตรหัสผ่าน', 'url' => ['admin-std/reset-pwd']],
+                    ]],
+                    ['label' => '<i class="main-icon fa fa-unlock-alt"></i> <span>การจัดการสิทธิ์</span>', 'url'  => ['admin-permission/index']],
+                    ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa fa-tasks"></i> <span>โครงงาน</span>',
+                        'template'=>'<a href="#">{label}</a>',
+                        'url' => ['#'],'items' => [
+                        ['label' => 'ประเภทโครงงาน', 'url' => ['admin-project-type/index']],
+                        ['label' => 'ให้คะแนนโครงงาน', 'url' => ['admin-project-scoring/index']],
+                        ['label' => 'โครงงานต่อเนื่อง', 'url' => ['admin-project-continuous/index']],
+                        ['label' => 'ออกรายงาน', 'url' => ['admin-project-reporting/index']],
+                        ['label' => 'กำหนดสิทธิ์', 'url' => ['admin-project-permission/index']],
+                        ['label' => 'รันหมายเลขโครงงาน', 'url' => ['admin-project-running/index']],
+                    ]],
+                    ['label' => '<i class="main-icon fa fa-list-alt"></i>  <span>เวบบอร์ด</span>', 'url' => ['admin-board/index']],
+//                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
+                ],
+                'encodeLabels' => false,
+                'activateParents'=>true,
+                'options' => [
+                    'class' => 'nav nav-list',
+                ]
+            ]);
+        }?>
     </nav>
     <span id="asidebg"><!-- aside fixed background --></span>
 </aside>
@@ -110,30 +142,27 @@ AppAsset::register($this);
                         <img class="user-avatar" alt="" src="/images/noavatar.jpg" height="34"/>
                         <span class="user-name">
 									<span class="hidden-xs">
-										เข้าสู่ระบบ <i class="fa fa-angle-down"></i>
+										คมเคียว <i class="fa fa-angle-down"></i>
 									</span>
 								</span>
                     </a>
                     <ul class="dropdown-menu hold-on-click">
                         <li><!-- my calendar -->
-                            <a href="calendar.html"><i class="fa fa-calendar"></i> Calendar</a>
+                            <a href="calendar.html"><i class="fa fa-calendar"></i> ตารางนัดหมาย</a>
                         </li>
                         <li><!-- my inbox -->
-                            <a href="#"><i class="fa fa-envelope"></i> Inbox
+                            <a href="#"><i class="fa fa-envelope"></i> การแจ้งเตือน
                                 <span class="pull-right label label-default">0</span>
                             </a>
                         </li>
                         <li><!-- settings -->
-                            <a href="page-user-profile.html"><i class="fa fa-cogs"></i> Settings</a>
+                            <a href="page-user-profile.html"><i class="fa fa-cogs"></i> แก้ไขข้อมูลส่วนตัว</a>
                         </li>
 
                         <li class="divider"></li>
 
-                        <li><!-- lockscreen -->
-                            <a href="page-lock.html"><i class="fa fa-lock"></i> Lock Screen</a>
-                        </li>
                         <li><!-- logout -->
-                            <a href="page-login.html"><i class="fa fa-power-off"></i> Log Out</a>
+                            <a href="page-login.html"><i class="fa fa-power-off"></i> ออกจากระบบ</a>
                         </li>
                     </ul>
                 </li>
