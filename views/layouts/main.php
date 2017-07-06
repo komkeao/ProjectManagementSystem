@@ -7,7 +7,11 @@ use yii\helpers\Html;
 use yii\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
-
+$userType=2;
+//0 admin
+//1 student
+//2 teachers
+//3 guest
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -35,8 +39,15 @@ AppAsset::register($this);
         <?php echo Menu::widget([
             'items' => [
                 ['label' => '<i class="main-icon fa fa-home"></i> <span>หน้าหลัก</span>', 'url' => ['site/index']],
-                ['label' => '<i class="main-icon fa fa-newspaper-o"></i> <span>ข่าวสาร</span>', 'url' => ['news/index']],
-                ['label' => '<i class="main-icon fa fa-wechat"></i> <span>เว็บบอร์ด</span>', 'url' => ['board/index']],
+                ['label' => '<i class="main-icon fa fa-newspaper-o"></i> <span>ข่าวสาร</span>', 'url' => ['news/index'],'visible'=>$userType==3],
+                ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-file-text-o"></i> <span>ข่าวสาร</span>',
+                    'template'=>'<a href="#">{label}</a>',
+                    'url' => ['#'],'visible'=>$userType==2||$userType==0,'items' => [
+                    ['label' => 'ข่าว', 'url' => ['news/index']],
+                    ['label' => 'เพิ่มข่าว', 'url' => ['project/add']],
+                    ['label' => 'สถานะข่าว', 'url' => ['project/approve']],
+                ]],
+                ['label' => '<i class="main-icon fa fa-wechat"></i> <span>เว็บบอร์ด</span>', 'url'  => ['board/index']],
                 ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-file-text-o"></i> <span>โครงงาน</span>',
                     'template'=>'<a href="#">{label}</a>',
                     'url' => ['#'],'items' => [
