@@ -44,8 +44,8 @@ AppAsset::register($this);
                     'template'=>'<a href="#">{label}</a>',
                     'url' => ['#'],'visible'=>$userType==1||$userType==0,'items' => [
                     ['label' => 'ข่าว', 'url' => ['news/index']],
-                    ['label' => 'เพิ่มข่าว', 'url' => ['project/add']],
-                    ['label' => 'สถานะข่าว', 'url' => ['project/approve']],
+                    ['label' => 'เพิ่มข่าว', 'url' => ['news/add']],
+                    ['label' => 'สถานะข่าว', 'url' => ['news/approve']],
                 ]],
                 ['label' => '<i class="main-icon fa fa-wechat"></i> <span>เว็บบอร์ด</span>', 'url'  => ['board/index']],
                 ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-file-text-o"></i> <span>โครงงาน</span>',
