@@ -21,4 +21,8 @@ class NewsController extends Controller
     {
         return $this->render('add');
     }
+    public function actionStatus()
+    {
+        return $this->render('status');
+    }
 }
