@@ -211,7 +211,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     <b>โทรศัพท์เคลื่อนที่ :</b> <br>
                     <b>แฟกซ์ :</b> 0-4334-2910 <br>
                     <b>เว็บไซต์ :</b> <a href="http://sartra.kku.ac.th">http://sartra.kku.ac.th</a><br>
-                </p></td>
+                </p>
+            </td>
         </tr>
         <tr>
             <td><?= Html::img('@web/images/demo/portfolio/thumb/small_a5.jpg', ['style' => 'width:100px']) ?></td>
@@ -240,3 +241,4 @@ $this->params['breadcrumbs'][] = $this->title;
             <li><a href="#">&raquo;</a></li>
         </ul>
     </div>
+</div>

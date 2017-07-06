@@ -7,10 +7,10 @@ use yii\helpers\Html;
 use yii\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
-$userType=2;
+$userType=3;
 //0 admin
-//1 student
-//2 teachers
+//1 teachers
+//2 student
 //3 guest
 AppAsset::register($this);
 ?>
@@ -39,10 +39,10 @@ AppAsset::register($this);
         <?php echo Menu::widget([
             'items' => [
                 ['label' => '<i class="main-icon fa fa-home"></i> <span>หน้าหลัก</span>', 'url' => ['site/index']],
-                ['label' => '<i class="main-icon fa fa-newspaper-o"></i> <span>ข่าวสาร</span>', 'url' => ['news/index'],'visible'=>$userType==3],
+                ['label' => '<i class="main-icon fa fa-newspaper-o"></i> <span>ข่าวสาร</span>', 'url' => ['news/index'],'visible'=>$userType>=2],
                 ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-file-text-o"></i> <span>ข่าวสาร</span>',
                     'template'=>'<a href="#">{label}</a>',
-                    'url' => ['#'],'visible'=>$userType==2||$userType==0,'items' => [
+                    'url' => ['#'],'visible'=>$userType==1||$userType==0,'items' => [
                     ['label' => 'ข่าว', 'url' => ['news/index']],
                     ['label' => 'เพิ่มข่าว', 'url' => ['project/add']],
                     ['label' => 'สถานะข่าว', 'url' => ['project/approve']],
@@ -53,6 +53,9 @@ AppAsset::register($this);
                     'url' => ['#'],'items' => [
                     ['label' => 'รายชื่อโครงงาน', 'url' => ['project/index']],
                     ['label' => 'โปสเตอร์โครงงาน', 'url' => ['project/poster']],
+                    ['label' => 'เพิ่มโครงงาน', 'url' => ['project/add'],'visible'=>$userType==2],
+                    ['label' => 'แก้ไขข้อมูลโครงงาน', 'url' => ['project/edit'],'visible'=>$userType==2],
+                    ['label' => 'ภาพรวมสถิติโครงงาน', 'url' => ['project/stat'],'visible'=>$userType<=1],
                 ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-users"></i> <span>รายชื่อ</span>', 'template'=>'<a href="#">{label}</a>','items' => [
                     ['label' => 'รายชื่ออาจารย์', 'url' => ['personnel/teachers']],
                     ['label' => 'รายชื่อนักศึกษา', 'url' => ['product/index']],
@@ -180,7 +183,7 @@ AppAsset::register($this);
                         <div class="col-md-3 sidebar">
                         <?php $this->beginContent('@app/views/fragments/rightPanel.php'); ?>
                         <?php $this->endContent(); ?>
-                        </div>
+                            </div>
                         <!-- END RIGHT -->
                     </div>
                 </div>
