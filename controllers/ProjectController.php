@@ -22,4 +22,8 @@ class ProjectController extends Controller
     {
         return $this->render('poster');
     }
+    public function actionStat()
+    {
+        return $this->render('stat');
+    }
 }
