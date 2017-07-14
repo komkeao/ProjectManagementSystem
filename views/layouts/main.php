@@ -7,7 +7,7 @@ use yii\helpers\Html;
 use yii\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
-$userType=2;
+$userType=1;
 //0 admin
 //1 teachers
 //2 student
@@ -44,7 +44,7 @@ AppAsset::register($this);
                     'template'=>'<a href="#">{label}</a>',
                     'url' => ['#'],'visible'=>$userType==1||$userType==0,'items' => [
                     ['label' => 'ข่าว', 'url' => ['news/index']],
-                    ['label' => 'เพิ่มข่าว', 'url' => ['news/add']],
+                    ['label' => 'เพิ่มข่าว', 'url' => ['news/create']],
                     ['label' => 'สถานะข่าว', 'url' => ['news/status']],
                 ]],
                 ['label' => '<i class="main-icon fa fa-wechat"></i> <span>เว็บบอร์ด</span>', 'url'  => ['board/index']],

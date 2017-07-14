@@ -1,74 +1,75 @@
     <!-- IMAGES -->
+    <?php use yii\helpers\Url;?>
     <h3>Recent Images</h3>
     <ul class="list-inline aside-thumbs clearfix">
         <li>
             <a href="#">
-                <img alt="" src="../images/demo/portfolio/thumb/small_a1.jpg" height="50"/>
+                <img alt="" src="<?php echo Url::home(true)?>images/demo/portfolio/thumb/small_a1.jpg" height="50"/>
             </a>
         </li>
         <li>
             <a href="#">
-                <img alt="" src="../images/demo/portfolio/thumb/small_a2.jpg" height="50"/>
+                <img alt="" src="<?php echo Url::home(true)?>images/demo/portfolio/thumb/small_a2.jpg" height="50"/>
             </a>
         </li>
         <li>
             <a href="#">
-                <img alt="" src="../images/demo/portfolio/thumb/small_a3.jpg" height="50"/>
+                <img alt="" src="<?php echo Url::home(true)?>images/demo/portfolio/thumb/small_a3.jpg" height="50"/>
             </a>
         </li>
         <li>
             <a href="#">
-                <img alt="" src="../images/demo/portfolio/thumb/small_a4.jpg" height="50"/>
+                <img alt="" src="<?php echo Url::home(true)?>images/demo/portfolio/thumb/small_a4.jpg" height="50"/>
             </a>
         </li>
         <li>
             <a href="#">
-                <img alt="" src="../images/demo/portfolio/thumb/small_a5.jpg" height="50"/>
+                <img alt="" src="<?php echo Url::home(true)?>images/demo/portfolio/thumb/small_a5.jpg" height="50"/>
             </a>
         </li>
         <li>
             <a href="#">
-                <img alt="" src="../images/demo/portfolio/thumb/small_a6.jpg" height="50"/>
+                <img alt="" src="<?php echo Url::home(true)?>images/demo/portfolio/thumb/small_a6.jpg" height="50"/>
             </a>
         </li>
         <li>
             <a href="#">
-                <img alt="" src="../images/demo/portfolio/thumb/small_a7.jpg" height="50"/>
+                <img alt="" src="<?php echo Url::home(true)?>images/demo/portfolio/thumb/small_a7.jpg" height="50"/>
             </a>
         </li>
         <li>
             <a href="#">
-                <img alt="" src="../images/demo/portfolio/thumb/small_a8.jpg" height="50"/>
+                <img alt="" src="<?php echo Url::home(true)?>images/demo/portfolio/thumb/small_a8.jpg" height="50"/>
             </a>
         </li>
         <li>
             <a href="#">
-                <img alt="" src="../images/demo/portfolio/thumb/small_a1.jpg" height="50"/>
+                <img alt="" src="<?php echo Url::home(true)?>images/demo/portfolio/thumb/small_a1.jpg" height="50"/>
             </a>
         </li>
         <li>
             <a href="#">
-                <img alt="" src="../images/demo/portfolio/thumb/small_a2.jpg" height="50"/>
+                <img alt="" src="<?php echo Url::home(true)?>images/demo/portfolio/thumb/small_a2.jpg" height="50"/>
             </a>
         </li>
         <li>
             <a href="#">
-                <img alt="" src="../images/demo/portfolio/thumb/small_a3.jpg" height="50"/>
+                <img alt="" src="<?php echo Url::home(true)?>images/demo/portfolio/thumb/small_a3.jpg" height="50"/>
             </a>
         </li>
         <li>
             <a href="#">
-                <img alt="" src="../images/demo/portfolio/thumb/small_a4.jpg" height="50"/>
+                <img alt="" src="<?php echo Url::home(true)?>images/demo/portfolio/thumb/small_a4.jpg" height="50"/>
             </a>
         </li>
         <li>
             <a href="#">
-                <img alt="" src="../images/demo/portfolio/thumb/small_a5.jpg" height="50"/>
+                <img alt="" src="<?php echo Url::home(true)?>images/demo/portfolio/thumb/small_a5.jpg" height="50"/>
             </a>
         </li>
         <li>
             <a href="#">
-                <img alt="" src="../images/demo/portfolio/thumb/small_a6.jpg" height="50"/>
+                <img alt="" src="<?php echo Url::home(true)?>images/demo/portfolio/thumb/small_a6.jpg" height="50"/>
             </a>
         </li>
     </ul>
