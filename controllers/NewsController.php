@@ -74,8 +74,8 @@ class NewsController extends Controller
         $model->crby=$this::DEFAULT_USER;
         $model->udby=$this::DEFAULT_USER;
         $model->status_id=$this::PENDING_NEWS;
-        $model->crtime=date("Y-m-d H:i");
-        $model->udtime=date("Y-m-d H:i");
+        $model->crtime=date('Y-m-d H:i:s');
+        $model->udtime=date('Y-m-d H:i:s');
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
