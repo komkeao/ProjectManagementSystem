@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\News;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -12,6 +13,7 @@ use app\models\ContactForm;
 
 class SiteController extends Controller
 {
+    const APPROVED_NEWS = 2;
     /**
      * @inheritdoc
      */
@@ -61,7 +63,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = News::find()->where(['status_id'=>$this::APPROVED_NEWS])->orderBy( 'crtime DESC')->all();
+        return $this->render('index',['data'=>$model]);
     }
     public function actionNews()
     {
