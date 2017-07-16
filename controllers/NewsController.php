@@ -17,11 +17,13 @@ use yii\web\NotFoundHttpException;
 
 class NewsController extends Controller
 {
+    //NEED TO CHANGE
     const DEFAULT_USER = 1;
-    const PENDING_NEWS_STATUS = 1;
-    const APPROVED_NEWS_STATUS = 2;
-    const DISAPPROVED_NEWS_STATUS = 3;
-    const EDIT_PENDING_NEWS_STATUS = 4;
+    //DEFAULT CONST
+    const PENDING_NEWS = 1;
+    const APPROVED_NEWS = 2;
+    const DISAPPROVED_NEWS = 3;
+    const EDIT_PENDING_NEWS = 4;
 
     public function behaviors()
     {
@@ -36,7 +38,7 @@ class NewsController extends Controller
     }
     public function actionIndex()
     {
-        $dataProvider = News::find()->where(['status_id'=>$this::APPROVED_NEWS_STATUS])->all();
+        $dataProvider = News::find()->where(['status_id'=>$this::APPROVED_NEWS])->all();
         return $this->render('index', [
             'data' => $dataProvider
         ]);
@@ -46,10 +48,10 @@ class NewsController extends Controller
     {
         if($id!=0){
             $model=$this->findModel($id);
-            $model->status_id=$this::APPROVED_NEWS_STATUS;
+            $model->status_id=$this::APPROVED_NEWS;
             $model->save();
         }
-        $dataProvider = News::find()->where(['status_id'=>$this::PENDING_NEWS_STATUS])->all();
+        $dataProvider = News::find()->where(['status_id'=>$this::PENDING_NEWS])->all();
         return $this->render('status', [
             'data' => $dataProvider
         ]);
@@ -71,7 +73,7 @@ class NewsController extends Controller
         $model = new News();
         $model->crby=$this::DEFAULT_USER;
         $model->udby=$this::DEFAULT_USER;
-        $model->status_id=$this::PENDING_NEWS_STATUS;
+        $model->status_id=$this::PENDING_NEWS;
         $model->crtime=date("Y-m-d H:i");
         $model->udtime=date("Y-m-d H:i");
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -101,7 +103,7 @@ class NewsController extends Controller
     public function actionDelete($id)
     {
         $model=$this->findModel($id);
-        $model->status_id=$this::DISAPPROVED_NEWS_STATUS;
+        $model->status_id=$this::DISAPPROVED_NEWS;
         $model->save();
         return $this->redirect(['index']);
     }
