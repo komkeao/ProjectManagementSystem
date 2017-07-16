@@ -39,7 +39,7 @@ class NewsController extends Controller
     }
     public function actionIndex()
     {
-        $query = News::find()->where(['status_id'=>$this::APPROVED_NEWS]);
+        $query = News::find()->where(['status_id'=>$this::APPROVED_NEWS])->orderBy( 'crtime DESC');
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize'=>10]);
         $models = $query->offset($pages->offset)
@@ -54,7 +54,7 @@ class NewsController extends Controller
     public function actionStatus($id=0)
     {
         if($id!=0){
-            $model=$this->findModel($id);
+            $model=$this->findModel($id)->orderBy( 'crtime DESC');
             $model->status_id=$this::APPROVED_NEWS;
             $model->save();
         }
