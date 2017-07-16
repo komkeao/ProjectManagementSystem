@@ -10,6 +10,7 @@ $this->title = 'ข่าวสาร';
 //$this->params['breadcrumbs'][] = ['label' => 'Employees', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<h1><?php echo $this->title?></h1>
 <?php
 foreach ($data as $item) { ?>
     <a href="<?php echo Url::toRoute(['news/view', 'id' => $item->id]);?>">
