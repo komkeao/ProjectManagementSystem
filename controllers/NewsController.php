@@ -30,7 +30,7 @@ class NewsController extends Controller
     }
     public function actionIndex()
     {
-        $dataProvider = News::find()->where(['status_id'=>1])->all();
+        $dataProvider = News::find()->where(['status_id'=>2])->all();
         return $this->render('index', [
             'data' => $dataProvider
         ]);
@@ -40,10 +40,10 @@ class NewsController extends Controller
     {
         if($id!=0){
             $model=$this->findModel($id);
-            $model->status_id=1;
+            $model->status_id=2;
             $model->save();
         }
-        $dataProvider = News::find()->where(['status_id'=>0])->all();
+        $dataProvider = News::find()->where(['status_id'=>1])->all();
         return $this->render('status', [
             'data' => $dataProvider
         ]);
@@ -65,7 +65,7 @@ class NewsController extends Controller
         $model = new News();
         $model->crby=1;
         $model->udby=1;
-        $model->status_id=0;
+        $model->status_id=1;
         $model->crtime=date("Y-m-d H:i");
         $model->udtime=date("Y-m-d H:i");
 
@@ -96,7 +96,7 @@ class NewsController extends Controller
     public function actionDelete($id)
     {
         $model=$this->findModel($id);
-        $model->status_id=2;
+        $model->status_id=3;
         $model->save();
         return $this->redirect(['index']);
     }
@@ -108,6 +108,30 @@ class NewsController extends Controller
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+    public function actionUploadPost()
+    {
+        $model = new ForumPost;
+        $gallery = new UserGallery;
+        if (isset($_POST['ForumPost'], $_FILES['UserGallery'])) {
+            // populate input data to $model and $gallery
+            $model->attributes = $_POST['ForumPost'];
+            $gallery->attributes = $_POST['UserGallery'];
+            $rnd = rand(123456789, 9876543210);    // generate random number between 0123456789-9876543210
+            $timeStamp = time();    // generate current timestamp
+            $uploadedFile = CUploadedFile::getInstance($gallery, 'forum_image');
+            if ($uploadedFile != null) {
+                $fileName = "{$rnd}-{$timeStamp}-{$uploadedFile}";  // random number + Timestamp + file name
+                $gallery->forum_image = $fileName;
+            }
+            $valid_format = "jpg,png,jpeg,gif";     // Allow the above extensions only.
+            if ($gallery->save() && $valid_format) {
+                if (!empty($uploadedFile)) {
+                    $uploadedFile->saveAs(Yii::app()->basePath . '/../images/post/' . $fileName); // save images in given destination folder
+                }
+            }
+            $model->save(FALSE);
         }
     }
 }
