@@ -34,7 +34,6 @@ class NewsController extends Controller
         return $this->render('index', [
             'data' => $dataProvider
         ]);
-        //return $this->render('index');
     }
 
     public function actionStatus($id=0)
@@ -65,6 +64,7 @@ class NewsController extends Controller
     {
         $model = new News();
         $model->crby=1;
+        $model->udby=1;
         $model->status_id=0;
         $model->crtime=date("Y-m-d H:i");
         $model->udtime=date("Y-m-d H:i");
@@ -95,8 +95,9 @@ class NewsController extends Controller
 
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-
+        $model=$this->findModel($id);
+        $model->status_id=2;
+        $model->save();
         return $this->redirect(['index']);
     }
 
