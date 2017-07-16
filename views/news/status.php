@@ -19,8 +19,9 @@ $this->params['breadcrumbs'][] = $this->title;
         <tr>
             <th>รายการ</th>
             <th>โดย</th>
-            <th></i>เมื่อวันที่</th>
-            <th></i>#</th>
+            <th>เมื่อวันที่</th>
+            <th>สถานะ</th>
+            <th>#</th>
 
         </tr>
         </thead>
@@ -32,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <td><?php echo $item->title ?></td>
                     <td><?php echo $item->crby ?></td>
                     <td><?php echo $item->crtime ?></td>
+                    <td><?php echo $item->newsStatus->desc ?></td>
                     <td><?= Html::a('<i class="fa fa-check-square-o"></i>', ['status', 'id' => $item->id], ['style' => 'color:green;']) ?>
 
                         <?= Html::a('<i class="fa fa-edit"></i>', ['update', 'id' => $item->id]) ?>
