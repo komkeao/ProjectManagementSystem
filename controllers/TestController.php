@@ -16,28 +16,9 @@ use yii\web\Controller;
 
 class TestController extends Controller
 {
-    public function actionIndex($name = "test")
+    public function actionIndex()
     {
-        $project = new Projects();
-        $project->name = $name;
-        $project->project_type_id = 1;
-        $project->save();
-        $data = "test";
-        $model = Projects::find()->all();
-        if ($model) {
-            $data = $model;
-        }
-        return $this->render('index', ['data' => $data]);
-    }
 
-    public function actionProject($name = "test")
-    {
-        $data = "test";
-        $model = Projects::find()->all();
-        if ($model) {
-            $data = $model;
-        }
-        return $this->render('index', ['data' => $data]);
     }
 
 }
