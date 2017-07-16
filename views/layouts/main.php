@@ -7,7 +7,8 @@ use yii\helpers\Html;
 use yii\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
-$userType=1;
+
+$userType = 1;
 //0 admin
 //1 teachers
 //2 student
@@ -39,25 +40,25 @@ AppAsset::register($this);
         <?php echo Menu::widget([
             'items' => [
                 ['label' => '<i class="main-icon fa fa-home"></i> <span>หน้าหลัก</span>', 'url' => ['site/index']],
-                ['label' => '<i class="main-icon fa fa-newspaper-o"></i> <span>ข่าวสาร</span>', 'url' => ['news/index'],'visible'=>$userType>=2],
+                ['label' => '<i class="main-icon fa fa-newspaper-o"></i> <span>ข่าวสาร</span>', 'url' => ['news/index'], 'visible' => $userType >= 2],
                 ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-newspaper-o"></i> <span>ข่าวสาร</span>',
-                    'template'=>'<a href="#">{label}</a>',
-                    'url' => ['#'],'visible'=>$userType==1||$userType==0,'items' => [
+                    'template' => '<a href="#">{label}</a>',
+                    'url' => ['#'], 'visible' => $userType == 1 || $userType == 0, 'items' => [
                     ['label' => 'ข่าว', 'url' => ['news/index']],
                     ['label' => 'เพิ่มข่าว', 'url' => ['news/create']],
                     ['label' => 'สถานะข่าว', 'url' => ['news/status']],
                 ]],
-                ['label' => '<i class="main-icon fa fa-wechat"></i> <span>เว็บบอร์ด</span>', 'url'  => ['board/index']],
+                ['label' => '<i class="main-icon fa fa-wechat"></i> <span>เว็บบอร์ด</span>', 'url' => ['board/index']],
                 ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-file-text-o"></i> <span>โครงงาน</span>',
-                    'template'=>'<a href="#">{label}</a>',
-                    'url' => ['#'],'items' => [
+                    'template' => '<a href="#">{label}</a>',
+                    'url' => ['#'], 'items' => [
                     ['label' => 'รายชื่อโครงงาน', 'url' => ['project/index']],
                     ['label' => 'โปสเตอร์โครงงาน', 'url' => ['project/poster']],
-                    ['label' => 'เพิ่มโครงงาน', 'url' => ['project/add'],'visible'=>$userType==2],
-                    ['label' => 'แก้ไขข้อมูลโครงงาน', 'url' => ['project/edit'],'visible'=>$userType==2],
-                    ['label' => 'อัพโหลดเอกสารโครงงาน', 'url' => ['project/document'],'visible'=>$userType==2],
-                    ['label' => 'ภาพรวมสถิติโครงงาน', 'url' => ['project/stat'],'visible'=>$userType<=1],
-                ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-users"></i> <span>รายชื่อ</span>', 'template'=>'<a href="#">{label}</a>','items' => [
+                    ['label' => 'เพิ่มโครงงาน', 'url' => ['project/add'], 'visible' => $userType == 2],
+                    ['label' => 'แก้ไขข้อมูลโครงงาน', 'url' => ['project/edit'], 'visible' => $userType == 2],
+                    ['label' => 'อัพโหลดเอกสารโครงงาน', 'url' => ['project/document'], 'visible' => $userType == 2],
+                    ['label' => 'ภาพรวมสถิติโครงงาน', 'url' => ['project/stat'], 'visible' => $userType <= 1],
+                ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-users"></i> <span>รายชื่อ</span>', 'template' => '<a href="#">{label}</a>', 'items' => [
                     ['label' => 'รายชื่ออาจารย์', 'url' => ['personnel/teachers']],
                     ['label' => 'รายชื่อนักศึกษา', 'url' => ['personnel/students']],
                     ['label' => 'รายชื่อกรรมการคุมสอบ', 'url' => ['personnel/board']],
@@ -68,26 +69,26 @@ AppAsset::register($this);
 //                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
             ],
             'encodeLabels' => false,
-            'activateParents'=>true,
+            'activateParents' => true,
             'options' => [
                 'class' => 'nav nav-list',
             ]
         ]);
-        if($userType==0){
-        ?>
-        <h3>ผู้ดูแลระบบ</h3>
-        <?php
+        if ($userType == 0) {
+            ?>
+            <h3>ผู้ดูแลระบบ</h3>
+            <?php
             echo Menu::widget([
                 'items' => [
                     ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-user"></i> <span>นักศึกษา</span>',
-                        'template'=>'<a href="#">{label}</a>',
-                        'url' => ['#'],'items' => [
+                        'template' => '<a href="#">{label}</a>',
+                        'url' => ['#'], 'items' => [
                         ['label' => 'รีเซตรหัสผ่าน', 'url' => ['admin-std/reset-pwd']],
                     ]],
-                    ['label' => '<i class="main-icon fa fa-unlock-alt"></i> <span>การจัดการสิทธิ์</span>', 'url'  => ['admin-permission/index']],
+                    ['label' => '<i class="main-icon fa fa-unlock-alt"></i> <span>การจัดการสิทธิ์</span>', 'url' => ['admin-permission/index']],
                     ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa fa-tasks"></i> <span>โครงงาน</span>',
-                        'template'=>'<a href="#">{label}</a>',
-                        'url' => ['#'],'items' => [
+                        'template' => '<a href="#">{label}</a>',
+                        'url' => ['#'], 'items' => [
                         ['label' => 'ประเภทโครงงาน', 'url' => ['admin-project-type/index']],
                         ['label' => 'ให้คะแนนโครงงาน', 'url' => ['admin-project-scoring/index']],
                         ['label' => 'โครงงานต่อเนื่อง', 'url' => ['admin-project-continuous/index']],
@@ -99,12 +100,12 @@ AppAsset::register($this);
 //                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                 ],
                 'encodeLabels' => false,
-                'activateParents'=>true,
+                'activateParents' => true,
                 'options' => [
                     'class' => 'nav nav-list',
                 ]
             ]);
-        }?>
+        } ?>
     </nav>
     <span id="asidebg"><!-- aside fixed background --></span>
 </aside>
@@ -210,11 +211,11 @@ AppAsset::register($this);
                         <!-- END LEFT -->
                         <!-- RIGHT -->
                         <div class="col-md-3 sidebar">
-                        <?php $this->beginContent('@app/views/fragments/rightPanel.php'); ?>
-                        <?php $this->endContent(); ?>
-                            </div>
-                        <!-- END RIGHT -->
+                            <?php $this->beginContent('@app/views/fragments/rightPanel.php'); ?>
+                            <?php $this->endContent(); ?>
+                        </div>
                     </div>
+                    <!-- END RIGHT -->
                 </div>
             </div>
         </div>
@@ -226,9 +227,9 @@ AppAsset::register($this);
 <!---->
 <!--<footer class="footer">-->
 <!--    <div class="container">-->
-<!--                <p class="pull-left">&copy; My Company --><?// //= date('Y') ?><!--</p>-->
+<!--                <p class="pull-left">&copy; My Company --><? // //= date('Y') ?><!--</p>-->
 <!---->
-<!--                <p class="pull-right">--><?// //= Yii::powered() ?><!--</p>-->
+<!--                <p class="pull-right">--><? // //= Yii::powered() ?><!--</p>-->
 <!--    </div>-->
 <!--</footer>-->
 
