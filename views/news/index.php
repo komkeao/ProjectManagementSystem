@@ -15,7 +15,7 @@ foreach ($data as $item) { ?>
     <a href="<?php echo Url::toRoute(['news/view', 'id' => $item->id]);?>">
         <div class="alert alert-bordered-dotted margin-bottom-3 padding-3"><!-- DEFAULT -->
             <strong> <?php echo $item->title;?> </strong>
-            <span style="color: black">- โดย <?php echo $item->crby?> เมื่อ <?php echo TimeAgo::widget(['timestamp' => $item->crtime, 'language' => 'th']) ?></span>
+            <span style="color: black">- โดย <?php echo $item->crby?> (<i><?php echo TimeAgo::widget(['timestamp' => $item->crtime, 'language' => 'th']) ?></i>)</span>
         </div>
     </a>
 <?php } ?>
