@@ -11,6 +11,7 @@ namespace app\controllers;
 
 use app\models\News;
 use Yii;
+use yii\data\Pagination;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -38,10 +39,23 @@ class NewsController extends Controller
     }
     public function actionIndex()
     {
-        $dataProvider = News::find()->where(['status_id'=>$this::APPROVED_NEWS])->all();
+        $query = News::find()->where(['status_id'=>$this::APPROVED_NEWS]);
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize'=>2]);
+        $models = $query->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
+
         return $this->render('index', [
-            'data' => $dataProvider
+            'data' => $models,
+            'pages' => $pages,
         ]);
+
+
+//        $dataProvider = News::find()->where(['status_id'=>$this::APPROVED_NEWS])->all();
+//        return $this->render('index', [
+//            'data' => $dataProvider
+//        ]);
     }
 
     public function actionStatus($id=0)
