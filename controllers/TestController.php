@@ -11,14 +11,49 @@ namespace app\controllers;
 
 use app\models\Projects;
 use app\models\ProjectType;
-use app\models\Users;
+use app\models\Upload;
+use Yii;
 use yii\web\Controller;
+use yii\web\UploadedFile;
+use yii\data\ActiveDataProvider;
 
 class TestController extends Controller
 {
-    public function actionIndex()
-    {
+    const DEFAULT_USER = 1;
+    public function actionIndex(){
 
     }
+    public function actionCreate()
+    {
+        $model = new Upload();
+        $model->crby=$this::DEFAULT_USER;
+        $model->udby=$this::DEFAULT_USER;
+        $model->crtime=date('Y-m-d H:i:s');
+        $model->udtime=date('Y-m-d H:i:s');
+        if($model->load(Yii::$app->request->post())){
+
+            try{
+                $model->image = UploadedFile::getInstance($model, 'image');
+                $model->files = UploadedFile::getInstances($model, 'files'); //upload หลายไฟล์ getInstances (เติม s)
+                $model->image = $model->uploadImage(); //method return ชื่อไฟล์
+                $model->files = $model->uploadFiles(); //method return ชื่อไฟล์ aaaa.aaa, bbbb.bbb, ...
+
+
+                $model->save();//บันทึกข้อมูล
+                /*var_dump($model);
+                die();*/
+                Yii::$app->session->setFlash('success', 'บันทึกข้อมูลเรียบร้อย');
+                return $this->redirect(['index']);
+            }catch(Exception $e){
+                Yii::$app->session->setFlash('danger', 'มีข้อผิดพลาด');
+                return $this->redirect(['index']);
+            }
+        }
+
+        return $this->render('index', [
+            'model' => $model,
+        ]);
+    }
+
 
 }

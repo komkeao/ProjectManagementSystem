@@ -6,9 +6,8 @@ $this->title = 'ทดสอบ';
 //$this->params['breadcrumbs'][] = ['label' => 'Employees', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?php
-
-?>
-
+<?=$this->render('_form', [
+    'model' => $model
+])?>
 
 
