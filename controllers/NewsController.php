@@ -41,21 +41,14 @@ class NewsController extends Controller
     {
         $query = News::find()->where(['status_id'=>$this::APPROVED_NEWS]);
         $countQuery = clone $query;
-        $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize'=>2]);
+        $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize'=>10]);
         $models = $query->offset($pages->offset)
             ->limit($pages->limit)
             ->all();
-
         return $this->render('index', [
             'data' => $models,
             'pages' => $pages,
         ]);
-
-
-//        $dataProvider = News::find()->where(['status_id'=>$this::APPROVED_NEWS])->all();
-//        return $this->render('index', [
-//            'data' => $dataProvider
-//        ]);
     }
 
     public function actionStatus($id=0)
