@@ -2,100 +2,54 @@
 
 /* @var $this yii\web\View */
 
+use yii\helpers\Html;
+use yii\helpers\Url;
+use yii\timeago\TimeAgo;
+use yii\widgets\LinkPager;
+
 $this->title = 'ดาวน์โหลด';
 //$this->params['breadcrumbs'][] = ['label' => 'Employees', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="table-responsive nomargin">
+<div class=" nomargin">
     <table class="table table-bordered table-striped">
         <thead>
+
         <tr>
             <th>รายละเอียด</th>
             <th>แก้ไขเมื่อ</th>
             <th>สร้างเมื่อ</th>
-            <th>#</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td><b>ตารางสอบโครงงาน Midterm ภาคปลาย 2558 (progress2)</b></td>
-            <td>3 วันที่แล้ว</td>
-            <td>ประมาณ 1 ปี</td>
-            <td>
-                <span class="label label-success"><i class="fa fa-download"></i> Download</span>
-                <!--                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-edit white"></i> Edit </a>-->
-                <!--                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-times white"></i> Delete </a>-->
-            </td>
-        </tr>
-        <tr>
-            <td><b>ตารางสอบโครงงาน Midterm ภาคปลาย 2558 (progress2)</b></td>
-            <td>3 วันที่แล้ว</td>
-            <td>ประมาณ 1 ปี</td>
-            <td>
-                <span class="label label-success"><i class="fa fa-download"></i> Download</span>
-                <!--                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-edit white"></i> Edit </a>-->
-                <!--                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-times white"></i> Delete </a>-->
-            </td>
-        </tr>
-        <tr>
-            <td><b>ตารางสอบโครงงาน Midterm ภาคปลาย 2558 (progress2)</b></td>
-            <td>3 วันที่แล้ว</td>
-            <td>ประมาณ 1 ปี</td>
-            <td>
-                <span class="label label-success"><i class="fa fa-download"></i> Download</span>
-                <!--                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-edit white"></i> Edit </a>-->
-                <!--                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-times white"></i> Delete </a>-->
-            </td>
-        </tr><tr>
-            <td><b>ตารางสอบโครงงาน Midterm ภาคปลาย 2558 (progress2)</b></td>
-            <td>3 วันที่แล้ว</td>
-            <td>ประมาณ 1 ปี</td>
-            <td>
-                <span class="label label-success"><i class="fa fa-download"></i> Download</span>
-                <!--                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-edit white"></i> Edit </a>-->
-                <!--                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-times white"></i> Delete </a>-->
-            </td>
-        </tr><tr>
-            <td><b>ตารางสอบโครงงาน Midterm ภาคปลาย 2558 (progress2)</b></td>
-            <td>3 วันที่แล้ว</td>
-            <td>ประมาณ 1 ปี</td>
-            <td>
-                <span class="label label-success"><i class="fa fa-download"></i> Download</span>
-                <!--                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-edit white"></i> Edit </a>-->
-                <!--                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-times white"></i> Delete </a>-->
-            </td>
-        </tr><tr>
-            <td><b>ตารางสอบโครงงาน Midterm ภาคปลาย 2558 (progress2)</b></td>
-            <td>3 วันที่แล้ว</td>
-            <td>ประมาณ 1 ปี</td>
-            <td>
-                <span class="label label-success"><i class="fa fa-download"></i> Download</span>
-                <!--                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-edit white"></i> Edit </a>-->
-                <!--                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-times white"></i> Delete </a>-->
-            </td>
-        </tr><tr>
-            <td><b>ตารางสอบโครงงาน Midterm ภาคปลาย 2558 (progress2)</b></td>
-            <td>3 วันที่แล้ว</td>
-            <td>ประมาณ 1 ปี</td>
-            <td>
-                <span class="label label-success"><i class="fa fa-download"></i> Download</span>
-                <!--                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-edit white"></i> Edit </a>-->
-                <!--                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-times white"></i> Delete </a>-->
-            </td>
-        </tr>
+        <?php
+        foreach ($data as $item) {  ?>
+            <tr>
+                <td><b><?php echo $item->title ?></b></td>
+                <td><?php echo TimeAgo::widget(['timestamp' => $item->udtime, 'language' => 'th']) ?></td>
+                <td><?php echo TimeAgo::widget(['timestamp' => $item->crtime, 'language' => 'th']) ?></td>
+                <td>
+                    <?= Html::a('<i class="fa fa-download"></i>', [$item->filePath]) ?>
+                    <?= Html::a('<i class="fa fa-edit"></i>', ['update', 'id' => $item->id]) ?>
+                    <?= Html::a('<i class="fa fa-trash"></i>', ['delete', 'id' => $item->id], [
+                        'style' => 'color:red;',
+                        'data' => [
+                            'confirm' => 'Are you sure you want to delete this item?',
+                            'method' => 'post',
+                        ],
+                    ]) ?>
+                </td>
+            </tr>
 
-
+        <?php } ?>
         </tbody>
     </table>
 </div>
 <div class="text-center">
-    <ul class="pagination">
-        <li><a href="#">&laquo;</a></li>
-        <li class="active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">&raquo;</a></li>
-    </ul>
+    <?php
+    echo LinkPager::widget([
+        'pagination' => $pages,
+    ]);
+    ?>
 </div>

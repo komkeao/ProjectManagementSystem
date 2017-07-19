@@ -3,6 +3,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\Menu;
 use yii\widgets\Breadcrumbs;
@@ -34,6 +35,7 @@ AppAsset::register($this);
 <body class="smoothscroll enable-animation">
 <?php $this->beginBody() ?>
 <!--  ASIDE -->
+
 <aside id="aside">
     <nav id="sideNav"><!-- MAIN MENU -->
 
@@ -178,6 +180,12 @@ AppAsset::register($this);
     <section id="middle">
         <!-- page title -->
         <header id="page-header">
+            <?php if(Yii::$app->session->hasFlash('alert')):?>
+                <?= \yii\bootstrap\Alert::widget([
+                    'body'=>ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'body'),
+                    'options'=>ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'options'),
+                ])?>
+            <?php endif; ?>
             <h1><?= Html::encode($this->title) ?></h1>
 
             <?= Breadcrumbs::widget([
@@ -232,7 +240,6 @@ AppAsset::register($this);
 <!--                <p class="pull-right">--><? // //= Yii::powered() ?><!--</p>-->
 <!--    </div>-->
 <!--</footer>-->
-
 <?php $this->endBody() ?>
 <!-- JAVASCRIPT FILES -->
 <script type="text/javascript">var plugin_path = "/plugins/";</script>
