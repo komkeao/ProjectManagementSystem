@@ -28,3 +28,7 @@ phpunit.phar
 
 tests/_output/*
 tests/_support/_generated
+web/plugins/jquery-file-upload/server/node/public/
+web/plugins/jquery-file-upload/server/node/tmp/
+web/plugins/jquery-file-upload/server/php/files/thumbnail/
+web/uploads/
