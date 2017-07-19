@@ -54,7 +54,7 @@ class NewsController extends Controller
     public function actionStatus($id=0)
     {
         if($id!=0){
-            $model=$this->findModel($id)->orderBy( 'crtime DESC');
+            $model=$this->findModel($id);
             $model->status_id=$this::APPROVED_NEWS;
             $model->save();
         }
