@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <td><b><?php echo $item->title ?></b></td>
                 <td><?php echo TimeAgo::widget(['timestamp' => $item->udtime, 'language' => 'th']) ?></td>
                 <td><?php echo TimeAgo::widget(['timestamp' => $item->crtime, 'language' => 'th']) ?></td>
-                <td>
+                <td align="center">
                     <?= Html::a('<i class="fa fa-download"></i>', [$item->filePath],['style' => 'color:green;']) ?>
                     <?= Html::a('<i class="fa fa-edit"></i>', ['update', 'id' => $item->id]) ?>
                     <?= Html::a('<i class="fa fa-trash"></i>', ['delete', 'id' => $item->id], [

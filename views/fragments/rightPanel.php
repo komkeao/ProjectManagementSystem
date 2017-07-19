@@ -1,6 +1,5 @@
     <!-- IMAGES -->
     <?php use yii\helpers\Url;?>
-    <br/>
     <h3>Recent Images</h3>
     <ul class="list-inline aside-thumbs clearfix">
         <li>
