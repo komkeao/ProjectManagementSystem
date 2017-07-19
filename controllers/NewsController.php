@@ -97,7 +97,7 @@ class NewsController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $model->udtime=date("Y-m-d H:i");
+        $model->udtime=date('Y-m-d H:i:s');
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {

@@ -32,8 +32,10 @@ class DownloadController extends Controller
             'data' => $models,
             'pages' => $pages,
         ]);
-
     }
+
+
+
     public function actionCreate()
     {
         $model = new Download();
@@ -58,12 +60,14 @@ class DownloadController extends Controller
             'model' => $model,
         ]);
     }
+
+
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
         if($model->load(Yii::$app->request->post())){
             try{
-                $model->udtime=date("Y-m-d H:i");
+                $model->udtime=date('Y-m-d H:i:s');
                 $model->file = UploadedFile::getInstance($model, 'file');//upload หลายไฟล์ getInstances (เติม s)
                 $model->file = $model->uploadFile();//method return ชื่อไฟล์ aaaa.aaa, bbbb.bbb,
                 $model->save();//บันทึกข้อมูล
@@ -71,13 +75,30 @@ class DownloadController extends Controller
                 return $this->redirect(['index']);
             }catch(Exception $e){
                 Yii::$app->session->setFlash('danger', 'มีข้อผิดพลาด');
-                return $this->redirect(['sss']);
+                return $this->redirect(['index']);
             }
         }
         return $this->render('update', [
             'model' => $model
         ]);
     }
+
+
+    public function actionDelete($id)
+    {
+        $model = $this->findModel($id); //โหลด record ที่ต้องการมา
+        try {
+            unlink(Yii::getAlias('@webroot') . '/' . $model->filePath); //ลบไฟล์ออก
+            $model->delete();//บันทึกข้อมูลใหม่
+            Yii::$app->session->setFlash('success', 'ลบข้อมูลเรียบร้อยแล้ว');
+            return $this->redirect(['index']);
+        } catch (Exception $e) {
+            Yii::$app->session->setFlash('success', 'มีข้อผิดพลาด');
+            return $this->redirect(['index']);
+        }
+    }
+
+
     protected function findModel($id)
     {
         if (($model = Download::findOne($id)) !== null) {
