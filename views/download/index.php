@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <th>รายละเอียด</th>
             <th>แก้ไขเมื่อ</th>
             <th>สร้างเมื่อ</th>
-            <th></th>
+            <th><a href="create" class="btn btn-success btn-xs"><i class="fa fa-plus-square"></i> Add </a></th>
         </tr>
         </thead>
         <tbody>
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <td><?php echo TimeAgo::widget(['timestamp' => $item->udtime, 'language' => 'th']) ?></td>
                 <td><?php echo TimeAgo::widget(['timestamp' => $item->crtime, 'language' => 'th']) ?></td>
                 <td>
-                    <?= Html::a('<i class="fa fa-download"></i>', [$item->filePath]) ?>
+                    <?= Html::a('<i class="fa fa-download"></i>', [$item->filePath],['style' => 'color:green;']) ?>
                     <?= Html::a('<i class="fa fa-edit"></i>', ['update', 'id' => $item->id]) ?>
                     <?= Html::a('<i class="fa fa-trash"></i>', ['delete', 'id' => $item->id], [
                         'style' => 'color:red;',
