@@ -3,7 +3,6 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
-use yii\helpers\Url;
 use yii\timeago\TimeAgo;
 use yii\widgets\LinkPager;
 
