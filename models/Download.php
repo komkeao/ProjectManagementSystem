@@ -62,7 +62,7 @@ class Download extends \yii\db\ActiveRecord
         if ($this->validate()) {
             if ($this->file) {
                 if ($this->isNewRecord) {//ถ้าเป็นการเพิ่มใหม่ ให้ตั้งชื่อไฟล์ใหม่
-                    $fileName = substr(md5(rand(1, 1000) . time()), 0, 15) . '.' . $this->file->extension;//เลือกมา 15 อักษร .นามสกุล
+                    $fileName = substr(md5(rand(1, 1000) . time()), 0, 10) .date('YmdHi'). '.' . $this->file->extension;//เลือกมา 15 อักษร .นามสกุล
                 } else {//ถ้าเป็นการ update ให้ใช้ชื่อเดิม
                     $fileName = $this->getOldAttribute('file');
                 }
