@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "31393b46d3a9ee77662ebc7012dad73d",
+    "content-hash": "1c4ec2aeb3c040d8fda3ff29f7826d92",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -88,16 +88,16 @@
         },
         {
             "name": "bower-asset/jquery-timeago",
-            "version": "v1.6.0",
+            "version": "v1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rmm5t/jquery-timeago.git",
-                "reference": "f908f5c27ea5a8b1b27ef480fa4636dd90e76a8d"
+                "reference": "0a370aa681dccefccd42fac8e8892c9ef3257890"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rmm5t/jquery-timeago/zipball/f908f5c27ea5a8b1b27ef480fa4636dd90e76a8d",
-                "reference": "f908f5c27ea5a8b1b27ef480fa4636dd90e76a8d",
+                "url": "https://api.github.com/repos/rmm5t/jquery-timeago/zipball/0a370aa681dccefccd42fac8e8892c9ef3257890",
+                "reference": "0a370aa681dccefccd42fac8e8892c9ef3257890",
                 "shasum": ""
             },
             "require": {
@@ -203,6 +203,31 @@
             }
         },
         {
+            "name": "bower-asset/toastr",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johnpapa/toastr-bower.git",
+                "reference": "8ff63def898c6ac619fef2d284576e8e4941cb1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johnpapa/toastr-bower/zipball/8ff63def898c6ac619fef2d284576e8e4941cb1a",
+                "reference": "8ff63def898c6ac619fef2d284576e8e4941cb1a",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.6.3"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "toastr.js",
+                    "toastr.css"
+                ]
+            }
+        },
+        {
             "name": "bower-asset/yii2-pjax",
             "version": "v2.0.6",
             "source": {
@@ -238,16 +263,16 @@
         },
         {
             "name": "cebe/markdown",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cebe/markdown.git",
-                "reference": "c30eb5e01fe021cc5bba2f9ee0eeef96d4931166"
+                "reference": "25b28bae8a6f185b5030673af77b32e1163d5c6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cebe/markdown/zipball/c30eb5e01fe021cc5bba2f9ee0eeef96d4931166",
-                "reference": "c30eb5e01fe021cc5bba2f9ee0eeef96d4931166",
+                "url": "https://api.github.com/repos/cebe/markdown/zipball/25b28bae8a6f185b5030673af77b32e1163d5c6e",
+                "reference": "25b28bae8a6f185b5030673af77b32e1163d5c6e",
                 "shasum": ""
             },
             "require": {
@@ -294,7 +319,7 @@
                 "markdown",
                 "markdown-extra"
             ],
-            "time": "2016-09-14T20:40:20+00:00"
+            "time": "2017-07-16T21:13:23+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -342,6 +367,53 @@
                 "html"
             ],
             "time": "2017-06-03T02:28:16+00:00"
+        },
+        {
+            "name": "lavrentiev/yii2-toastr",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lavrentiev/yii2-toastr.git",
+                "reference": "fb2a9c4e003865f30aba96fd12735d4e3bf73bea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lavrentiev/yii2-toastr/zipball/fb2a9c4e003865f30aba96fd12735d4e3bf73bea",
+                "reference": "fb2a9c4e003865f30aba96fd12735d4e3bf73bea",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/toastr": "2.1.1",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": ">=2.0.6"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "lavrentiev\\widgets\\toastr\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Eugene Lavrentiev (RyanTedder)",
+                    "email": "lavrentiev.e@gmail.com",
+                    "homepage": "https://github.com/lavrentiev"
+                }
+            ],
+            "description": "Simple javascript toast notifications",
+            "homepage": "https://github.com/lavrentiev/yii2-toastr",
+            "keywords": [
+                "extension",
+                "jquery",
+                "notification",
+                "toastr",
+                "yii2"
+            ],
+            "time": "2016-12-06T20:00:12+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2600,16 +2672,16 @@
         },
         {
             "name": "symfony/browser-kit",
-            "version": "v3.3.4",
+            "version": "v3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/browser-kit.git",
-                "reference": "3a4435e79a8401746e8525e98039199d0924b4e5"
+                "reference": "8079a6b3668ef15cdbf73a4c7d31081abb8bb5f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/3a4435e79a8401746e8525e98039199d0924b4e5",
-                "reference": "3a4435e79a8401746e8525e98039199d0924b4e5",
+                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/8079a6b3668ef15cdbf73a4c7d31081abb8bb5f0",
+                "reference": "8079a6b3668ef15cdbf73a4c7d31081abb8bb5f0",
                 "shasum": ""
             },
             "require": {
@@ -2653,11 +2725,11 @@
             ],
             "description": "Symfony BrowserKit Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-24T09:29:48+00:00"
+            "time": "2017-07-12T13:03:20+00:00"
         },
         {
             "name": "symfony/console",
-            "version": "v3.3.4",
+            "version": "v3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
@@ -2726,7 +2798,7 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v3.3.4",
+            "version": "v3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
@@ -2779,7 +2851,7 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v3.3.4",
+            "version": "v3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
@@ -2835,7 +2907,7 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v3.3.4",
+            "version": "v3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
@@ -2891,7 +2963,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v3.3.4",
+            "version": "v3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -2954,7 +3026,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v3.3.4",
+            "version": "v3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -3062,7 +3134,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.3.4",
+            "version": "v3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",

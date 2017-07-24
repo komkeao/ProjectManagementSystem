@@ -3,13 +3,14 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+use yii\bootstrap\Alert;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
-$userType = 1;
+$userType = 0;
 //0 admin
 //1 teachers
 //2 student
@@ -31,6 +32,7 @@ AppAsset::register($this);
 
     <!-- WEB FONTS -->
     <link href="" rel="stylesheet" type="text/css"/>
+
 </head>
 <body class="smoothscroll enable-animation">
 <?php $this->beginBody() ?>
@@ -208,7 +210,7 @@ AppAsset::register($this);
                 <div class="panel-body">
 
                     <div class="row">
-
+                        <?php $this->render('/layouts/alert')?>
                         <!-- LEFT -->
                         <div class="col-md-9">
 
@@ -245,4 +247,5 @@ AppAsset::register($this);
 <script type="text/javascript">var plugin_path = "/plugins/";</script>
 </body>
 </html>
+
 <?php $this->endPage() ?>

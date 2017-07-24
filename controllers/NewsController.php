@@ -39,6 +39,7 @@ class NewsController extends Controller
     }
     public function actionIndex()
     {
+        Yii::$app->session->setFlash('success', "Your message to display");
         $query = News::find()->where(['status_id'=>$this::APPROVED_NEWS])->orderBy( 'crtime DESC');
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize'=>10]);
