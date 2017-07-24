@@ -1,6 +1,7 @@
 <?php
 
 namespace app\components\file2text;
+
 class Segment {
 
     private $_input_string;
