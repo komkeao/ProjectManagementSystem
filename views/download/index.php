@@ -26,8 +26,8 @@ $this->params['breadcrumbs'][] = $this->title;
         foreach ($data as $item) {  ?>
             <tr>
                 <td><b><?php echo $item->title ?></b></td>
-                <td><?php echo TimeAgo::widget(['timestamp' => $item->udtime, 'language' => 'th']) ?></td>
-                <td><?php echo TimeAgo::widget(['timestamp' => $item->crtime, 'language' => 'th']) ?></td>
+                <td><?php echo TimeAgo::widget(['timestamp' => $item->udtime."GMT+7", 'language' => 'th']) ?></td>
+                <td><?php echo TimeAgo::widget(['timestamp' => $item->crtime."GMT+7", 'language' => 'th']) ?></td>
                 <td align="center">
                     <?= Html::a('<i class="fa fa-download"></i>', [$item->filePath],['style' => 'color:green;']) ?>
                     <?= Html::a('<i class="fa fa-edit"></i>', ['update', 'id' => $item->id]) ?>
