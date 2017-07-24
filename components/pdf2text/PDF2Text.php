@@ -48,6 +48,7 @@ Other excellent options to search within a PDF:
 - pdflib TET (http://www.pdflib.com/products/tet/)
 - Online converter: http://snowtide.com/PDFTextStream
 */
+
 namespace app\components;
 class PDF2Text {
 	// Some settings
