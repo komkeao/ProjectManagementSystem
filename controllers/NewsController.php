@@ -39,7 +39,7 @@ class NewsController extends Controller
     }
     public function actionIndex()
     {
-        Yii::$app->session->setFlash('success', "Your message to display");
+
         $query = News::find()->where(['status_id'=>$this::APPROVED_NEWS])->orderBy( 'crtime DESC');
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize'=>10]);
@@ -58,6 +58,7 @@ class NewsController extends Controller
             $model=$this->findModel($id);
             $model->status_id=$this::APPROVED_NEWS;
             $model->save();
+            Yii::$app->session->setFlash('success', "อนุมัติข่าวสำเร็จ");
         }
         $dataProvider = News::find()->where(['status_id'=>$this::PENDING_NEWS])->all();
         return $this->render('status', [
@@ -85,6 +86,7 @@ class NewsController extends Controller
         $model->crtime=date('Y-m-d H:i:s');
         $model->udtime=date('Y-m-d H:i:s');
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', "เพิ่มข่าวสำเร็จ");
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -100,6 +102,7 @@ class NewsController extends Controller
         $model = $this->findModel($id);
         $model->udtime=date('Y-m-d H:i:s');
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', "แก้ไขข้อมูลสำเร็จ");
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -113,6 +116,7 @@ class NewsController extends Controller
         $model=$this->findModel($id);
         $model->status_id=$this::DISAPPROVED_NEWS;
         $model->save();
+        Yii::$app->session->setFlash('success', "ลบข่าวสำเร็จ");
         return $this->redirect(['index']);
     }
 

@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <tr>
                     <td><?php echo $item->title ?></td>
                     <td><?php echo $item->crby ?></td>
-                    <td><?php echo TimeAgo::widget(['timestamp' => $item->crtime, 'language' => 'th']) ?></td>
+                    <td><?php echo TimeAgo::widget(['timestamp' => $item->crtime."GMT+7", 'language' => 'th']) ?></td>
                     <td><?php echo $item->newsStatus->desc ?></td>
                     <td><?= Html::a('<i class="fa fa-check-square-o"></i>', ['status', 'id' => $item->id], ['style' => 'color:green;']) ?>
 
