@@ -10,6 +10,7 @@ namespace app\controllers;
 
 
 
+use app\components\office2text\DocxConversion;
 use app\components\thsplitlib\Segment;
 use app\models\Upload;
 use http\Exception;
@@ -61,6 +62,8 @@ class TestController extends Controller
         $text = $pdf->getText();
         $text = str_replace(" า", "ำ", $text);
         $text = str_replace(" ิว", "ิว", $text);
+//        $docObj = new DocxConversion(Yii::getAlias('@webroot') . '/files/1.docx');
+//        $text= $docObj->convertToText();
         $segment = new Segment();
         $result = $segment->get_segment_array($text);
         $text= implode(' | ', $result);
