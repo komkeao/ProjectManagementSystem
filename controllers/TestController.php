@@ -9,13 +9,12 @@
 namespace app\controllers;
 
 
-use app\models\Projects;
-use app\models\ProjectType;
+
 use app\models\Upload;
+use Smalot\PdfParser\Parser;
 use Yii;
 use yii\web\Controller;
 use yii\web\UploadedFile;
-use yii\data\ActiveDataProvider;
 
 class TestController extends Controller
 {
@@ -53,6 +52,12 @@ class TestController extends Controller
         return $this->render('index', [
             'model' => $model,
         ]);
+    }
+    public function actionFile(){
+        $parser = new Parser();
+        $pdf    = $parser->parseFile(Yii::getAlias('@webroot') . '/files/1.pdf');
+        $text = $pdf->getText();
+        return $this->render("file", ["data" => $text]);
     }
 
 

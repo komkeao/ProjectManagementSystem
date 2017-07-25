@@ -1,4 +1,0 @@
-$a = new PDF2Text();
-$a->setFilename('filename.pdf');
-$a->decodePDF();
-echo $a->output();
