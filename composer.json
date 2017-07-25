@@ -20,7 +20,11 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "yiidoc/yii2-timeago": "dev-master",
         "lavrentiev/yii2-toastr": "^2.0",
-        "smalot/pdfparser": "*"
+        "smalot/pdfparser": "*",
+        "kartik-v/yii2-widgets": "*",
+        "kartik-v/yii2-grid": "*",
+        "kartik-v/yii2-export": "*",
+        "kartik-v/yii2-mpdf": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
