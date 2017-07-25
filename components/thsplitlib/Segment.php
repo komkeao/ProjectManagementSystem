@@ -1,6 +1,6 @@
 <?php
 
-namespace app\components\file2text;
+namespace app\components\thsplitlib;
 
 class Segment {
 

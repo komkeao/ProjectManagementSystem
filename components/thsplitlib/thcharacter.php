@@ -5,7 +5,7 @@
  * Email: suwichalala@gmail.com
  * Website: http://www.projecka.com
  */
-namespace app\components\file2text;
+namespace app\components\thsplitlib;
 class Thchracter
 {
     function is_consonant($char_number)

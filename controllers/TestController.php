@@ -10,7 +10,9 @@ namespace app\controllers;
 
 
 
+use app\components\thsplitlib\Segment;
 use app\models\Upload;
+use http\Exception;
 use Smalot\PdfParser\Parser;
 use Yii;
 use yii\web\Controller;
@@ -55,10 +57,13 @@ class TestController extends Controller
     }
     public function actionFile(){
         $parser = new Parser();
-        $pdf    = $parser->parseFile(Yii::getAlias('@webroot') . '/files/1.pdf');
+        $pdf    = $parser->parseFile(Yii::getAlias('@webroot') . '/files/2.pdf');
         $text = $pdf->getText();
+        $text = str_replace(" า", "ำ", $text);
+        $text = str_replace(" ิว", "ิว", $text);
+        $segment = new Segment();
+        $result = $segment->get_segment_array($text);
+        $text= implode(' | ', $result);
         return $this->render("file", ["data" => $text]);
     }
-
-
 }

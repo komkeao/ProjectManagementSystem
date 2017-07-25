@@ -5,7 +5,7 @@
  * Email: suwichalala@gmail.com
  * Website: http://www.projecka.com
  */
-namespace app\components\file2text;
+namespace app\components\thsplitlib;
 class Unicode {
 
     function uni_ord_list_to_string($ords, $encoding = 'UTF-8') {
