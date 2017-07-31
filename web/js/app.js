@@ -17,11 +17,11 @@
 	jQuery(window).ready(function() {
 
 		// Load Bootstrap JS
-		//loadScript(plugin_path + 'bootstrap/js/bootstrap.min.js', function() {
+		loadScript(plugin_path + 'bootstrap/js/bootstrap.min.js', function() {
 
 			FirstInit();
 
-		//});
+		});
 
 	});
 
