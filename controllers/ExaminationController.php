@@ -17,4 +17,34 @@ class ExaminationController extends Controller
         return $this->render('index');
     }
 
+
+    public function actionSchedule(){
+        return $this->render('schedule');
+    }
+
+    public function actionGradeCalculation(){
+        return $this->render('grade-calculation');
+    }
+
+
+    public function actionManageGroup(){
+        return $this->render('manage-group');
+    }
+
+
+    public function actionExamSchedule(){
+        return $this->render('exam-schedule');
+    }
+
+    public function actionExamScore(){
+        return $this->render('exam-score');
+    }
+
+
+    public function actionReport(){
+        return $this->render('report');
+    }
+
+
+
 }

@@ -63,7 +63,7 @@ AppAsset::register($this);
                 ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-users"></i> <span>กลุ่มสอบ</span>', 'template' => '<a href="#">{label}</a>', 'items' => [
                     ['label' => 'ตารางงาน', 'url' => ['examination/schedule']],
                     ['label' => 'ตัดเกรด', 'url' => ['examination/grade-calculation']],
-                    ['label' => 'จัดกลุ่มสอบ', 'url' => ['examination/manag-group']],
+                    ['label' => 'จัดกลุ่มสอบ', 'url' => ['examination/manage-group']],
                     ['label' => 'ตารางสอบ', 'url' => ['examination/exam-schedule']],
                     ['label' => 'ให้คะแนนสอบ', 'url' => ['examination/exam-score']],
                     ['label' => 'ออกรายงาน', 'url' => ['examination/report']]
