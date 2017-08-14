@@ -52,7 +52,6 @@ AppAsset::register($this);
                     ['label' => 'เพิ่มข่าว', 'url' => ['news/create']],
                     ['label' => 'สถานะข่าว', 'url' => ['news/status']],
                 ]],
-                ['label' => '<i class="main-icon fa fa-wechat"></i> <span>เว็บบอร์ด</span>', 'url' => ['board/index']],
                 ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-file-text-o"></i> <span>โครงงาน</span>',
                     'template' => '<a href="#">{label}</a>',
                     'url' => ['#'], 'items' => [
