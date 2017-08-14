@@ -56,11 +56,17 @@ AppAsset::register($this);
                     'template' => '<a href="#">{label}</a>',
                     'url' => ['#'], 'items' => [
                     ['label' => 'รายชื่อโครงงาน', 'url' => ['project/index']],
-                    ['label' => 'โปสเตอร์โครงงาน', 'url' => ['project/poster']],
                     ['label' => 'เพิ่มโครงงาน', 'url' => ['project/add'], 'visible' => $userType == 2],
                     ['label' => 'แก้ไขข้อมูลโครงงาน', 'url' => ['project/edit'], 'visible' => $userType == 2],
                     ['label' => 'อัพโหลดเอกสารโครงงาน', 'url' => ['project/document'], 'visible' => $userType == 2],
                     ['label' => 'ภาพรวมสถิติโครงงาน', 'url' => ['project/stat'], 'visible' => $userType <= 1],
+                ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-users"></i> <span>กลุ่มสอบ</span>', 'template' => '<a href="#">{label}</a>', 'items' => [
+                    ['label' => 'ตารางงาน', 'url' => ['examination/schedule']],
+                    ['label' => 'ตัดเกรด', 'url' => ['examination/grade-calculation']],
+                    ['label' => 'จัดกลุ่มสอบ', 'url' => ['examination/manag-group']],
+                    ['label' => 'ตารางสอบ', 'url' => ['examination/exam-schedule']],
+                    ['label' => 'ให้คะแนนสอบ', 'url' => ['examination/exam-score']],
+                    ['label' => 'ออกรายงาน', 'url' => ['examination/report']]
                 ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-users"></i> <span>รายชื่อ</span>', 'template' => '<a href="#">{label}</a>', 'items' => [
                     ['label' => 'รายชื่ออาจารย์', 'url' => ['personnel/teachers']],
                     ['label' => 'รายชื่อนักศึกษา', 'url' => ['personnel/students']],
