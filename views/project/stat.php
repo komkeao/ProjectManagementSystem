@@ -4,6 +4,7 @@
 
 $this->title = 'ภาพรวมสถิติโครงงาน';
 //$this->params['breadcrumbs'][] = ['label' => 'Employees', 'url' => ['index']];
+$this->params['breadcrumbs'][] =['label' => 'โครงงาน', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 

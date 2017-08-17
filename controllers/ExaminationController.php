@@ -40,7 +40,9 @@ class ExaminationController extends Controller
     public function actionExamScore(){
         return $this->render('exam-score');
     }
-
+    public function actionBoard(){
+        return $this->render('board');
+    }
 
     public function actionReport(){
         return $this->render('report');

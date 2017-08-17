@@ -4,7 +4,7 @@
 
 use yii\helpers\Html;
 
-$this->title = 'รายชื่อโครงงาน';
+$this->title = 'โครงงาน';
 //$this->params['breadcrumbs'][] = ['label' => 'Employees', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

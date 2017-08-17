@@ -49,9 +49,9 @@ AppAsset::register($this);
                 ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-newspaper-o"></i> <span>ข่าวสาร</span>',
                     'template' => '<a href="#">{label}</a>',
                     'url' => ['#'], 'visible' => $userType == 1 || $userType == 0, 'items' => [
-                    ['label' => 'ข่าว', 'url' => ['news/index']],
+                    ['label' => 'ฟีด', 'url' => ['news/index']],
                     ['label' => 'เพิ่มข่าว', 'url' => ['news/create']],
-                    ['label' => 'สถานะข่าว', 'url' => ['news/status']],
+                    ['label' => 'การอนุมัติ', 'url' => ['news/status']],
                 ]],
                 ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-file-text-o"></i> <span>โครงงาน</span>',
                     'template' => '<a href="#">{label}</a>',
@@ -67,15 +67,15 @@ AppAsset::register($this);
                 ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-user"></i> <span>ที่ปรึกษาโครงงาน</span>', 'template' => '<a href="#">{label}</a>', 'items' => [
                     ['label' => 'ยื่นคำร้องที่ปรึกษา', 'url' => ['adviser/request'], 'visible' => $userType == 2],
                     ['label' => 'คำร้องที่ปรึกษา', 'url' => ['adviser/requested'], 'visible' => $userType == 1],
-                    ['label' => 'สถานะอาจารย์', 'url' => ['adviser/status']],
+                    ['label' => 'สถานะที่ปรึกษา', 'url' => ['adviser/status']],
                     ['label' => 'จัดการที่ปรึกษา', 'url' => ['adviser/management']],
                 ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-users"></i> <span>กลุ่มสอบ</span>', 'template' => '<a href="#">{label}</a>', 'items' => [
                     ['label' => 'ตารางงาน', 'url' => ['examination/schedule']],
-                    ['label' => 'ตัดเกรด', 'url' => ['examination/grade-calculation']],
+                    ['label' => 'คำนวนเกรด', 'url' => ['examination/grade-calculation']],
                     ['label' => 'จัดกลุ่มสอบ', 'url' => ['examination/manage-group']],
                     ['label' => 'ตารางสอบ', 'url' => ['examination/exam-schedule']],
                     ['label' => 'ให้คะแนนสอบ', 'url' => ['examination/exam-score']],
-                    ['label' => 'รายชื่อกรรมการคุมสอบ', 'url' => ['examination/board']],
+                    ['label' => 'กรรมการสอบ', 'url' => ['examination/board']],
                     ['label' => 'ออกรายงาน', 'url' => ['examination/report']]
                 ]],
                 ['label' => '<i class="main-icon fa fa-download"></i>  <span>ดาวน์โหลด</span>', 'url' => ['download/index']],
@@ -93,12 +93,12 @@ AppAsset::register($this);
             <?php
             echo Menu::widget([
                 'items' => [
+                    ['label' => '<i class="main-icon fa fa-unlock-alt"></i> <span>การจัดการสิทธิ์</span>', 'url' => ['admin-permission/index']],
                     ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-male"></i> <span>นักศึกษา</span>',
                         'template' => '<a href="#">{label}</a>',
                         'url' => ['#'], 'items' => [
                         ['label' => 'นำเข้ารายชื่อนักศึกษา', 'url' => ['admin-std/add']],
                     ]],
-                    ['label' => '<i class="main-icon fa fa-unlock-alt"></i> <span>การจัดการสิทธิ์</span>', 'url' => ['admin-permission/index']],
                     ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa fa-tasks"></i> <span>โครงงาน</span>',
                         'template' => '<a href="#">{label}</a>',
                         'url' => ['#'], 'items' => [
