@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this \yii\web\View */
+
 /* @var $content string */
 
 use yii\bootstrap\Alert;
@@ -56,21 +57,26 @@ AppAsset::register($this);
                     'template' => '<a href="#">{label}</a>',
                     'url' => ['#'], 'items' => [
                     ['label' => 'รายชื่อโครงงาน', 'url' => ['project/index']],
+                    ['label' => 'นักศึกษาที่ยังไม่เพิ่มโครงงาน', 'url' => ['project/unsent-project-std']],
+                    ['label' => 'นักศึกษาที่ยังไม่ส่งเอกสารโครงงาน', 'url' => ['project/unsent-document-std']],
+                    ['label' => 'จำนวนโครงงานต่ออาจารย์ที่ปรึกษา', 'url' => ['project/project-per-teacher']],
                     ['label' => 'เพิ่มโครงงาน', 'url' => ['project/add'], 'visible' => $userType == 2],
                     ['label' => 'แก้ไขข้อมูลโครงงาน', 'url' => ['project/edit'], 'visible' => $userType == 2],
                     ['label' => 'อัพโหลดเอกสารโครงงาน', 'url' => ['project/document'], 'visible' => $userType == 2],
                     ['label' => 'ภาพรวมสถิติโครงงาน', 'url' => ['project/stat'], 'visible' => $userType <= 1],
+                ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-user"></i> <span>ที่ปรึกษาโครงงาน</span>', 'template' => '<a href="#">{label}</a>', 'items' => [
+                    ['label' => 'ยื่นคำร้องที่ปรึกษา', 'url' => ['adviser/request'], 'visible' => $userType == 2],
+                    ['label' => 'คำร้องที่ปรึกษา', 'url' => ['adviser/requested'], 'visible' => $userType == 1],
+                    ['label' => 'สถานะอาจารย์', 'url' => ['adviser/status']],
+                    ['label' => 'จัดการที่ปรึกษา', 'url' => ['adviser/management']],
                 ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-users"></i> <span>กลุ่มสอบ</span>', 'template' => '<a href="#">{label}</a>', 'items' => [
                     ['label' => 'ตารางงาน', 'url' => ['examination/schedule']],
                     ['label' => 'ตัดเกรด', 'url' => ['examination/grade-calculation']],
                     ['label' => 'จัดกลุ่มสอบ', 'url' => ['examination/manage-group']],
                     ['label' => 'ตารางสอบ', 'url' => ['examination/exam-schedule']],
                     ['label' => 'ให้คะแนนสอบ', 'url' => ['examination/exam-score']],
+                    ['label' => 'รายชื่อกรรมการคุมสอบ', 'url' => ['examination/board']],
                     ['label' => 'ออกรายงาน', 'url' => ['examination/report']]
-                ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-male"></i> <span>รายชื่อ</span>', 'template' => '<a href="#">{label}</a>', 'items' => [
-                    ['label' => 'รายชื่อกรรมการคุมสอบ', 'url' => ['personnel/board']],
-                    ['label' => 'นักศึกษาที่ยังไม่เพิ่มโครงงาน', 'url' => ['personnel/unsent-student']],
-                    ['label' => 'จำนวนโครงงานต่ออาจารย์ที่ปรึกษา', 'url' => ['personnel/project-per-teacher']]
                 ]],
                 ['label' => '<i class="main-icon fa fa-download"></i>  <span>ดาวน์โหลด</span>', 'url' => ['download/index']],
 //                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
@@ -87,7 +93,7 @@ AppAsset::register($this);
             <?php
             echo Menu::widget([
                 'items' => [
-                    ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-user"></i> <span>นักศึกษา</span>',
+                    ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-male"></i> <span>นักศึกษา</span>',
                         'template' => '<a href="#">{label}</a>',
                         'url' => ['#'], 'items' => [
                         ['label' => 'นำเข้ารายชื่อนักศึกษา', 'url' => ['admin-std/add']],
@@ -100,7 +106,6 @@ AppAsset::register($this);
                         ['label' => 'ให้คะแนนโครงงาน', 'url' => ['admin-project-scoring/index']],
                         ['label' => 'โครงงานต่อเนื่อง', 'url' => ['admin-project-continuous/index']],
                         ['label' => 'ออกรายงาน', 'url' => ['admin-project-reporting/index']],
-                        ['label' => 'กำหนดสิทธิ์', 'url' => ['admin-project-permission/index']],
                         ['label' => 'รันหมายเลขโครงงาน', 'url' => ['admin-project-running/index']],
                     ]]
 //                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
@@ -184,11 +189,11 @@ AppAsset::register($this);
     <section id="middle">
         <!-- page title -->
         <header id="page-header">
-            <?php if(Yii::$app->session->hasFlash('alert')):?>
+            <?php if (Yii::$app->session->hasFlash('alert')): ?>
                 <?= \yii\bootstrap\Alert::widget([
-                    'body'=>ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'body'),
-                    'options'=>ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'options'),
-                ])?>
+                    'body' => ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'body'),
+                    'options' => ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'options'),
+                ]) ?>
             <?php endif; ?>
             <h1><?= Html::encode($this->title) ?></h1>
 
@@ -212,7 +217,7 @@ AppAsset::register($this);
                 <div class="panel-body">
 
                     <div class="row">
-                        <?php $this->render('/layouts/alert')?>
+                        <?php $this->render('/layouts/alert') ?>
                         <!-- LEFT -->
                         <div class="col-md-9">
 
