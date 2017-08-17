@@ -90,7 +90,7 @@ AppAsset::register($this);
                     ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-user"></i> <span>นักศึกษา</span>',
                         'template' => '<a href="#">{label}</a>',
                         'url' => ['#'], 'items' => [
-                        ['label' => 'รีเซตรหัสผ่าน', 'url' => ['admin-std/reset-pwd']],
+                        ['label' => 'นำเข้ารายชื่อนักศึกษา', 'url' => ['admin-std/add']],
                     ]],
                     ['label' => '<i class="main-icon fa fa-unlock-alt"></i> <span>การจัดการสิทธิ์</span>', 'url' => ['admin-permission/index']],
                     ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa fa-tasks"></i> <span>โครงงาน</span>',

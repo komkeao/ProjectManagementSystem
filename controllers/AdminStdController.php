@@ -13,7 +13,7 @@ use yii\web\Controller;
 
 class AdminStdController extends Controller
 {
-    public function actionResetPwd()
+    public function actionAdd()
     {
         return $this->render('index');
     }
