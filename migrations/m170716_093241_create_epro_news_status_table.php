@@ -62,4 +62,5 @@ class m170716_093241_create_epro_news_status_table extends Migration
             'udtime'=> date('Y-m-d H:i:s'),
         ]);
     }
+
 }

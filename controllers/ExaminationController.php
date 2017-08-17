@@ -13,6 +13,7 @@ use yii\web\Controller;
 
 class ExaminationController extends Controller
 {
+
     public function actionIndex(){
         return $this->render('index');
     }

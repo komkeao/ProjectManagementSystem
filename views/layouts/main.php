@@ -10,7 +10,7 @@ use yii\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
-$userType = 2;
+$userType = 0;
 //0 admin
 //1 teachers
 //2 student
@@ -67,9 +67,7 @@ AppAsset::register($this);
                     ['label' => 'ตารางสอบ', 'url' => ['examination/exam-schedule']],
                     ['label' => 'ให้คะแนนสอบ', 'url' => ['examination/exam-score']],
                     ['label' => 'ออกรายงาน', 'url' => ['examination/report']]
-                ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-users"></i> <span>รายชื่อ</span>', 'template' => '<a href="#">{label}</a>', 'items' => [
-                    ['label' => 'รายชื่ออาจารย์', 'url' => ['personnel/teachers']],
-                    ['label' => 'รายชื่อนักศึกษา', 'url' => ['personnel/students']],
+                ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-male"></i> <span>รายชื่อ</span>', 'template' => '<a href="#">{label}</a>', 'items' => [
                     ['label' => 'รายชื่อกรรมการคุมสอบ', 'url' => ['personnel/board']],
                     ['label' => 'นักศึกษาที่ยังไม่เพิ่มโครงงาน', 'url' => ['personnel/unsent-student']],
                     ['label' => 'จำนวนโครงงานต่ออาจารย์ที่ปรึกษา', 'url' => ['personnel/project-per-teacher']]
