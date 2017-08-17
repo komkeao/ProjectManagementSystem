@@ -102,8 +102,7 @@ AppAsset::register($this);
                         ['label' => 'ออกรายงาน', 'url' => ['admin-project-reporting/index']],
                         ['label' => 'กำหนดสิทธิ์', 'url' => ['admin-project-permission/index']],
                         ['label' => 'รันหมายเลขโครงงาน', 'url' => ['admin-project-running/index']],
-                    ]],
-                    ['label' => '<i class="main-icon fa fa-list-alt"></i>  <span>เวบบอร์ด</span>', 'url' => ['admin-board/index']],
+                    ]]
 //                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                 ],
                 'encodeLabels' => false,
