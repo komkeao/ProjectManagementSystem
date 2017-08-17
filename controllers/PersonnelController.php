@@ -13,14 +13,6 @@ use yii\web\Controller;
 
 class PersonnelController extends Controller
 {
-    public function actionTeachers()
-    {
-        return $this->render('teachers');
-    }
-    public function actionStudents()
-    {
-        return $this->render('students');
-    }
     public function actionBoard()
     {
         return $this->render('board');
