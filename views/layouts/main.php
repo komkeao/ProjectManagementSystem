@@ -11,7 +11,7 @@ use yii\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
-$userType = 0;
+$userType = 3;
 //0 admin
 //1 teachers
 //2 student
@@ -68,15 +68,15 @@ AppAsset::register($this);
                     ['label' => 'ยื่นคำร้องที่ปรึกษา', 'url' => ['adviser/request'], 'visible' => $userType == 2],
                     ['label' => 'คำร้องที่ปรึกษา', 'url' => ['adviser/requested'], 'visible' => $userType == 1],
                     ['label' => 'สถานะที่ปรึกษา', 'url' => ['adviser/status']],
-                    ['label' => 'จัดการที่ปรึกษา', 'url' => ['adviser/management']],
+                    ['label' => 'จัดการที่ปรึกษา', 'url' => ['adviser/management'], 'visible' => $userType <=2],
                 ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-users"></i> <span>กลุ่มสอบ</span>', 'template' => '<a href="#">{label}</a>', 'items' => [
-                    ['label' => 'ตารางงาน', 'url' => ['examination/schedule']],
-                    ['label' => 'คำนวนเกรด', 'url' => ['examination/grade-calculation']],
-                    ['label' => 'จัดกลุ่มสอบ', 'url' => ['examination/manage-group']],
-                    ['label' => 'ตารางสอบ', 'url' => ['examination/exam-schedule']],
-                    ['label' => 'ให้คะแนนสอบ', 'url' => ['examination/exam-score']],
+                    ['label' => 'ตารางงาน', 'url' => ['examination/schedule'], 'visible' => $userType == 1],
+                    ['label' => 'คำนวนเกรด', 'url' => ['examination/grade-calculation'], 'visible' => $userType == 0],
+                    ['label' => 'จัดกลุ่มสอบ', 'url' => ['examination/manage-group'], 'visible' => $userType == 0],
+                    ['label' => 'ตารางสอบ', 'url' => ['examination/exam-schedule'], 'visible' => $userType <=2],
+                    ['label' => 'ให้คะแนนสอบ', 'url' => ['examination/exam-score'], 'visible' => $userType <=1],
                     ['label' => 'กรรมการสอบ', 'url' => ['examination/board']],
-                    ['label' => 'ออกรายงาน', 'url' => ['examination/report']]
+                    ['label' => 'ออกรายงาน', 'url' => ['examination/report'], 'visible' => $userType == 0]
                 ]],
                 ['label' => '<i class="main-icon fa fa-download"></i>  <span>ดาวน์โหลด</span>', 'url' => ['download/index']],
 //                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],

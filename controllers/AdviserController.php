@@ -21,4 +21,12 @@ class AdviserController extends Controller
 
         return $this->render('status');
     }
+    public function actionRequest(){
+
+        return $this->render('request');
+    }
+    public function actionRequested(){
+
+        return $this->render('requested');
+    }
 }
