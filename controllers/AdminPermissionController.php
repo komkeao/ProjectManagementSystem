@@ -17,4 +17,5 @@ class AdminPermissionController extends Controller
     {
         return $this->render('index');
     }
+
 }
