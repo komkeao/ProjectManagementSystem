@@ -152,15 +152,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
 
             </div><!-- /TAB 1 CONTENT -->
-
         </div>
         <!-- /tabs content -->
-
     </div>
     <!-- /panel content -->
-
 </div>
-
 <div class="text-warning">
     <span><i>ผลการค้นหา</i></span>
 </div>
@@ -177,7 +173,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <tr>
             <td><?= Html::img('@web/images/demo/portfolio/thumb/small_a5.jpg', ['style' => 'width:100px']) ?></td>
             <td>
-                <div >
+                <div>
                     <div class="col-xs-4 col-lg-3" style="padding: 0px">
                         <p align="right" style="margin: 0px"><b>รหัสโครงงาน : </b></p>
                     </div>
@@ -203,7 +199,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                 </div>
                 <div>
-                    <div class="col-xs-4 col-lg-3"  style="padding: 0px">
+                    <div class="col-xs-4 col-lg-3" style="padding: 0px">
                         <p align="right" style="margin: 0px"><b>อาจารย์ที่ปรึกษา : </b></p>
                     </div>
                     <div class="col-xs-8 col-lg-9">
@@ -218,10 +214,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         <p style="margin: 0px">[เอกสารโครงงาน]</p>
                     </div>
                 </div>
-</td>
-
+            </td>
         </tr>
-
         </tbody>
     </table>
     <div class="text-center">
