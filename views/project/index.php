@@ -123,7 +123,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="form-group">
                                     <div class="col-md-6 col-sm-6">
                                         <label>ประเภทโครงงาน *</label>
-                                        <select id="select2" multiple="multiple" class="form-control select2" style="width: 100%">
+                                        <select id="select2" multiple="multiple" class="form-control select2"
+                                                style="width: 100%">
                                             <option value="">--- Select 2 ---</option>
                                             <option value="1">Option 1</option>
                                             <option value="2">option 2</option>
@@ -170,62 +171,55 @@ $this->params['breadcrumbs'][] = $this->title;
         <tr>
             <th>รูป</th>
             <th>รายละเอียด</th>
-            <th>ข้อมูลการติดต่อ</th>
         </tr>
         </thead>
         <tbody>
         <tr>
             <td><?= Html::img('@web/images/demo/portfolio/thumb/small_a5.jpg', ['style' => 'width:100px']) ?></td>
-            <td><p><b>ชื่อ :</b> รศ.ดร.ศาสตรา วงศ์ธนวสุ<br>
-                    <b>สาขาวิชา :</b>วิทยาการคอมพิวเตอร์<br>
-                </p></td>
-            <td><p><b> ที่อยู่ : </b>ภาควิชาวิทยาการคอมพิวเตอร์คณะวิทยาศาสตร์มหาวิทยาลัย<br>
-                    <b>อีเมล์ :</b> wongsar@kku.ac.th <br>
-                    <b>โทรศัพท์ :</b> 0-4336-2188-90 ต่อ 320<br>
-                    <b>โทรศัพท์เคลื่อนที่ :</b> <br>
-                    <b>แฟกซ์ :</b> 0-4334-2910 <br>
-                    <b>เว็บไซต์ :</b> <a href="http://sartra.kku.ac.th">http://sartra.kku.ac.th</a><br>
-                </p></td>
-        </tr>
-        <tr>
-            <td><?= Html::img('@web/images/demo/portfolio/thumb/small_a5.jpg', ['style' => 'width:100px']) ?></td>
-            <td><p><b>ชื่อ :</b> รศ.ดร.ศาสตรา วงศ์ธนวสุ<br>
-                    <b>สาขาวิชา :</b>วิทยาการคอมพิวเตอร์<br>
-                </p></td>
-            <td><p><b> ที่อยู่ : </b>ภาควิชาวิทยาการคอมพิวเตอร์คณะวิทยาศาสตร์มหาวิทยาลัย<br>
-                    <b>อีเมล์ :</b> wongsar@kku.ac.th <br>
-                    <b>โทรศัพท์ :</b> 0-4336-2188-90 ต่อ 320<br>
-                    <b>โทรศัพท์เคลื่อนที่ :</b> <br>
-                    <b>แฟกซ์ :</b> 0-4334-2910 <br>
-                    <b>เว็บไซต์ :</b> <a href="http://sartra.kku.ac.th">http://sartra.kku.ac.th</a><br>
-                </p></td>
-        </tr>
-        <tr>
-            <td><?= Html::img('@web/images/demo/portfolio/thumb/small_a5.jpg', ['style' => 'width:100px']) ?></td>
-            <td><p><b>ชื่อ :</b> รศ.ดร.ศาสตรา วงศ์ธนวสุ<br>
-                    <b>สาขาวิชา :</b>วิทยาการคอมพิวเตอร์<br>
-                </p></td>
-            <td><p><b> ที่อยู่ : </b>ภาควิชาวิทยาการคอมพิวเตอร์คณะวิทยาศาสตร์มหาวิทยาลัย<br>
-                    <b>อีเมล์ :</b> wongsar@kku.ac.th <br>
-                    <b>โทรศัพท์ :</b> 0-4336-2188-90 ต่อ 320<br>
-                    <b>โทรศัพท์เคลื่อนที่ :</b> <br>
-                    <b>แฟกซ์ :</b> 0-4334-2910 <br>
-                    <b>เว็บไซต์ :</b> <a href="http://sartra.kku.ac.th">http://sartra.kku.ac.th</a><br>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td><?= Html::img('@web/images/demo/portfolio/thumb/small_a5.jpg', ['style' => 'width:100px']) ?></td>
-            <td><p><b>ชื่อ :</b> รศ.ดร.ศาสตรา วงศ์ธนวสุ<br>
-                    <b>สาขาวิชา :</b>วิทยาการคอมพิวเตอร์<br>
-                </p></td>
-            <td><p><b> ที่อยู่ : </b>ภาควิชาวิทยาการคอมพิวเตอร์คณะวิทยาศาสตร์มหาวิทยาลัย<br>
-                    <b>อีเมล์ :</b> wongsar@kku.ac.th <br>
-                    <b>โทรศัพท์ :</b> 0-4336-2188-90 ต่อ 320<br>
-                    <b>โทรศัพท์เคลื่อนที่ :</b> <br>
-                    <b>แฟกซ์ :</b> 0-4334-2910 <br>
-                    <b>เว็บไซต์ :</b> <a href="http://sartra.kku.ac.th">http://sartra.kku.ac.th</a><br>
-                </p></td>
+            <td>
+                <div >
+                    <div class="col-xs-4 col-lg-3" style="padding: 0px">
+                        <p align="right" style="margin: 0px"><b>รหัสโครงงาน : </b></p>
+                    </div>
+                    <div class="col-xs-8 col-lg-9 ">
+                        <p style="margin: 0px">SCS51/2560</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="col-xs-4 col-lg-3" style="padding: 0px">
+                        <p align="right" style="margin: 0px"><b>ชื่อโครงงาน (ไทย) : </b></p>
+                    </div>
+                    <div class="col-xs-8 col-lg-9">
+                        <p style="margin: 0px">การพัฒนาระบบสอบย้อนกลับกรณีศึกษาข้าวหอมมะลิ</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="col-xs-4 col-lg-3" style="padding: 0px">
+                        <p align="right" style="margin: 0px"><b>ชื่อโครงงาน (อังกฤษ) : </b></p>
+                    </div>
+                    <div class="col-xs-8 col-lg-9">
+                        <p style="margin: 0px">Traceability System Development A case study of Homati Rice</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="col-xs-4 col-lg-3"  style="padding: 0px">
+                        <p align="right" style="margin: 0px"><b>อาจารย์ที่ปรึกษา : </b></p>
+                    </div>
+                    <div class="col-xs-8 col-lg-9">
+                        <p style="margin: 0px">คำรณ(อาจารย์ที่ปรึกษาหลัก)</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="col-xs-4 col-lg-3" style="padding: 0px">
+                        <p align="right" style="margin: 0px"><b>การจัดการโครงงาน : </b></p>
+                    </div>
+                    <div class="col-xs-8 col-lg-9">
+                        <p style="margin: 0px">[เอกสารโครงงาน]</p>
+                    </div>
+                </div>
+</td>
+
         </tr>
 
         </tbody>
