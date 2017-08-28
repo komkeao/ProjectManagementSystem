@@ -11,7 +11,7 @@ use yii\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
-$userType = 3;
+$userType = 0;
 //0 admin
 //1 teachers
 //2 student
@@ -59,7 +59,6 @@ AppAsset::register($this);
                     ['label' => 'รายชื่อโครงงาน', 'url' => ['project/index']],
                     ['label' => 'นักศึกษาที่ยังไม่เพิ่มโครงงาน', 'url' => ['project/unsent-project-std']],
                     ['label' => 'นักศึกษาที่ยังไม่ส่งเอกสารโครงงาน', 'url' => ['project/unsent-document-std']],
-                    ['label' => 'จำนวนโครงงานต่ออาจารย์ที่ปรึกษา', 'url' => ['project/project-per-teacher']],
                     ['label' => 'เพิ่มโครงงาน', 'url' => ['project/add'], 'visible' => $userType == 2],
                     ['label' => 'แก้ไขข้อมูลโครงงาน', 'url' => ['project/edit'], 'visible' => $userType == 2],
                     ['label' => 'อัพโหลดเอกสารโครงงาน', 'url' => ['project/document'], 'visible' => $userType == 2],

@@ -46,8 +46,5 @@ class ProjectController extends Controller
     {
         return $this->render('unsent-document-std');
     }
-    public function actionProjectPerTeacher()
-    {
-        return $this->render('project-per-teacher');
-    }
+
 }
