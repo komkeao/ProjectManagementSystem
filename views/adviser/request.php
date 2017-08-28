@@ -9,5 +9,85 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <h1><?php echo $this->title ?></h1>
 
-ชื่อโปรเจค: <input  type="text" size="90" maxlength="40" ><br><br>
-ชื่อนักศึกษาคนที่1: <input  type="text" size="35" maxlength="40" > ชื่อนักศึกษาคนที่2: <input  type="text" size="35" maxlength="40" ><br><br>
+<div class="">
+    <table class="table table-bordered nomargin">
+
+        <tr>
+            <th>ชื่อโปรเจค:</th>
+            <th>
+
+                    <input type="text" name="contact[last_name]" value=""
+                           class="form-control required">
+               </th>
+
+
+
+
+        </tr>
+
+
+        <tr>
+            <td>ชื่อนักศึกษาคนที่1:</td>
+            <td>
+
+                    <input type="text" name="contact[last_name]" value=""
+                           class="form-control required">
+                </td>
+
+
+
+
+        </tr>
+        <tr>
+            <td>ชื่อนักศึกษาคนที่2:</td>
+            <td>
+
+                    <input type="text" name="contact[last_name]" value=""
+                           class="form-control required">
+                </td>
+
+
+
+        </tr>
+        <tr>
+            <td>หัวข้อ/เรื่องที่สนใจ:</td>
+            <td>
+
+                    <input type="text" name="contact[last_name]" value=""
+                           class="form-control required">
+                </td>
+
+
+
+        </tr>
+        <tr>
+            <td>ความถนัด:</td>
+            <td> <input type="text" name="contact[last_name]" value=""
+                        class="form-control required"></td>
+
+
+        </tr>
+        <tr>
+            <td>เลือกอาจารย์ที่ปรึกษา:</td>
+            <td>
+
+                <select multiple="multiple" class="form-control select2" style="width: 100%">
+
+                    <option value="1">อ.ดร.สายยัญ สายยศ </option>
+                    <option value="2">อ.ดร.นันท์นภัส เบญจมาศ </option>
+                    <option value="3">ผศ.ดร.พุธษดี ศิริแสงตระกูล </option>
+                </select>
+                <i class="fancy-arrow-"></i>
+            </td>
+
+
+        </tr>
+
+
+    </table>
+    <br>
+    <button type="button" class="btn btn-default pull-right">ล้างฟอร์ม</button>
+    <button type="button" class="btn btn-default pull-right">ตกลง</button>
+
+
+</div>
