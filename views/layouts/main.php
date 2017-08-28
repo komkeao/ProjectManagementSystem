@@ -102,7 +102,6 @@ AppAsset::register($this);
                         'template' => '<a href="#">{label}</a>',
                         'url' => ['#'], 'items' => [
                         ['label' => 'ประเภทโครงงาน', 'url' => ['admin-project-type/index']],
-                        ['label' => 'ให้คะแนนโครงงาน', 'url' => ['admin-project-scoring/index']],
                         ['label' => 'โครงงานต่อเนื่อง', 'url' => ['admin-project-continuous/index']],
                         ['label' => 'ออกรายงาน', 'url' => ['admin-project-reporting/index']],
                         ['label' => 'รันหมายเลขโครงงาน', 'url' => ['admin-project-running/index']],
