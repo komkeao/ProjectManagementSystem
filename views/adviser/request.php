@@ -1,6 +1,8 @@
 <?php
 
 /* @var $this yii\web\View */
+$web = Yii::getAlias('@web');
+$this->registerJsFile( $web.'/js/fon-js.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 
 $this->title = 'ยื่นคำร้องที่ปรึกษา';
 //$this->params['breadcrumbs'][] = ['label' => 'Employees', 'url' => ['index']];
@@ -26,29 +28,28 @@ $this->params['breadcrumbs'][] = $this->title;
         </tr>
 
 
-        <tr>
-            <td>ชื่อนักศึกษาคนที่1:</td>
-            <td>
 
-                    <input type="text" name="contact[last_name]" value=""
-                           class="form-control required">
-                </td>
+
+
+
+
+
+
+
+
+        <tr>
+            <td>ชื่อนักศึกษา/ <button id="btn2" class="btn btn-success btn-sm">เพิ่ม</button></td>
+
+            <td id="box">
+                    <input type='text' value='' class='form-control required'>
+
+            </td>
 
 
 
 
         </tr>
-        <tr>
-            <td>ชื่อนักศึกษาคนที่2:</td>
-            <td>
 
-                    <input type="text" name="contact[last_name]" value=""
-                           class="form-control required">
-                </td>
-
-
-
-        </tr>
         <tr>
             <td>หัวข้อ/เรื่องที่สนใจ:</td>
             <td>
@@ -91,3 +92,5 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 </div>
+
+

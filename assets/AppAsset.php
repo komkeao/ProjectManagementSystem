@@ -25,10 +25,11 @@ class AppAsset extends AssetBundle
         'css/layout.css',
         'css/color_scheme/green.css'
     ];
-
+    public $cssOptions = ['type'=>'text/css'];
     public $js = [
         'js/app.js',
     ];
+    public $jsOptions = ['language'=>"JavaScript" ,'type'=>"text/javascript"];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
