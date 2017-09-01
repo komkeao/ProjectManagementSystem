@@ -40,6 +40,7 @@ $config = [
         ],
         'db' => $db,
 
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
@@ -53,11 +54,15 @@ $config = [
         ],
 
 
-    ],'modules' => [
-        'gridview' =>  [
+    ], 'modules' => [
+        'gridview' => [
             'class' => '\kartik\grid\Module'
-        ]
+        ],
+        'eproject' => [
+            'class' => 'app\modules\eproject\Module',
+        ],
     ],
+
     'params' => $params,
 ];
 

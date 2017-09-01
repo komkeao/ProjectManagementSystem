@@ -11,7 +11,7 @@ use yii\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
-$userType =0;
+$userType = 0;
 //0 admin
 //1 teachers
 //2 student
@@ -217,7 +217,7 @@ AppAsset::register($this);
                     <div class="row">
                         <?php $this->render('/layouts/alert') ?>
                         <!-- LEFT -->
-                        <div class="col-md-9">
+                        <div class="col-md-12">
 
                             <?= $content ?>
 
@@ -225,10 +225,10 @@ AppAsset::register($this);
                         </div>
                         <!-- END LEFT -->
                         <!-- RIGHT -->
-                        <div class="col-md-3 sidebar">
-                            <?php $this->beginContent('@app/views/fragments/rightPanel.php'); ?>
-                            <?php $this->endContent(); ?>
-                        </div>
+<!--                        <div class="col-md-3 sidebar">-->
+<!--                            --><?php //$this->beginContent('@app/views/fragments/rightPanel.php'); ?>
+<!--                            --><?php //$this->endContent(); ?>
+<!--                        </div>-->
                     </div>
                     <!-- END RIGHT -->
                 </div>
