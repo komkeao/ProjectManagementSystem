@@ -29,4 +29,23 @@ class AdviserController extends Controller
 
         return $this->render('requested');
     }
+
+
+    public function actionBroadcast(){
+
+        return $this->render('broadcast');
+    }
+    public function actionChangeTopic(){
+
+        return $this->render('change-topic');
+    }
+    public function actionChangeAdviser(){
+
+        return $this->render('change-adviser');
+    }
+    public function actionStudentPerAdviser(){
+
+        return $this->render('student-per-adviser');
+    }
+
 }

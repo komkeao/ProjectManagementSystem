@@ -15,6 +15,10 @@ class AdminStdController extends Controller
 {
     public function actionAdd()
     {
-        return $this->render('index');
+        return $this->render('add');
+    }
+    public function actionPermission()
+    {
+        return $this->render('permission');
     }
 }

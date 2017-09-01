@@ -11,7 +11,7 @@ namespace app\controllers;
 
 use yii\web\Controller;
 
-class AdminProjectReportingController extends Controller
+class AdminProjectExamGroupController extends Controller
 {
     public function actionIndex()
     {

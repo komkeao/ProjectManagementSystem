@@ -62,21 +62,32 @@ AppAsset::register($this);
                     ['label' => 'เพิ่มโครงงาน', 'url' => ['project/add'], 'visible' => $userType == 2],
                     ['label' => 'แก้ไขข้อมูลโครงงาน', 'url' => ['project/edit'], 'visible' => $userType == 2],
                     ['label' => 'อัพโหลดเอกสารโครงงาน', 'url' => ['project/document'], 'visible' => $userType == 2],
-                    ['label' => 'ภาพรวมสถิติโครงงาน', 'url' => ['project/stat'], 'visible' => $userType <= 1],
+                    ['label' => 'รายชื่อกรรมการสอบ', 'url' => ['project/stat'], 'visible' => $userType <= 1],
                 ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-user"></i> <span>ที่ปรึกษาโครงงาน</span>', 'template' => '<a href="#">{label}</a>', 'items' => [
                     ['label' => 'ยื่นคำร้องที่ปรึกษา', 'url' => ['adviser/request'], 'visible' => $userType == 2],
                     ['label' => 'คำร้องที่ปรึกษา', 'url' => ['adviser/requested'], 'visible' => $userType == 1],
                     ['label' => 'สถานะที่ปรึกษา', 'url' => ['adviser/status']],
+
+                    ['label' => 'ประกาศหาที่ปรึกษา', 'url' => ['adviser/broadcast']],
+                    ['label' => 'แจ้งขอเปลี่ยนหัวข้อโครงงาน', 'url' => ['adviser/change-topic']],
+                    ['label' => 'แจ้งขอเปลี่ยนที่ปรึกษา', 'url' => ['adviser/change-adviser']],
+                    ['label' => 'จำนวนโครงงานต่ออาจารย์ที่ปรึกษา', 'url' => ['adviser/student-per-adviser']],
+
                     ['label' => 'จัดการที่ปรึกษา', 'url' => ['adviser/management'], 'visible' => $userType <=2],
                 ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-users"></i> <span>กลุ่มสอบ</span>', 'template' => '<a href="#">{label}</a>', 'items' => [
-                    ['label' => 'ตารางงาน', 'url' => ['examination/schedule'], 'visible' => $userType == 1],
+                    /*['label' => 'ตารางงาน', 'url' => ['examination/schedule'], 'visible' => $userType == 1],
                     ['label' => 'คำนวนเกรด', 'url' => ['examination/grade-calculation'], 'visible' => $userType == 0],
                     ['label' => 'จัดกลุ่มสอบ', 'url' => ['examination/manage-group'], 'visible' => $userType == 0],
                     ['label' => 'ตารางสอบ', 'url' => ['examination/exam-schedule'], 'visible' => $userType <=2],
-                    ['label' => 'ให้คะแนนสอบ', 'url' => ['examination/exam-score'], 'visible' => $userType <=1],
+                    ['label' => 'ให้คะแนนสอบ', 'url' => ['examination/exam-score'], 'visible' => $userType <=1],*/
                     ['label' => 'กรรมการสอบ', 'url' => ['examination/board']],
-                    ['label' => 'ออกรายงาน', 'url' => ['examination/report'], 'visible' => $userType == 0]
+                    //['label' => 'ออกรายงาน', 'url' => ['examination/report'], 'visible' => $userType == 0]
                 ]],
+
+
+                ['label' => '<i class="main-icon fa fa-calendar-minus-o"></i> <span>ปฏิทิน</span>', 'url' => ['calender/index']],
+
+
                 ['label' => '<i class="main-icon fa fa-download"></i>  <span>ดาวน์โหลด</span>', 'url' => ['download/index']],
 //                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
             ],
@@ -97,14 +108,27 @@ AppAsset::register($this);
                         'template' => '<a href="#">{label}</a>',
                         'url' => ['#'], 'items' => [
                         ['label' => 'นำเข้ารายชื่อนักศึกษา', 'url' => ['admin-std/add']],
+                        ['label' => 'จัดการสิทธิ์', 'url' => ['admin-std/permission']],
                     ]],
                     ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa fa-tasks"></i> <span>โครงงาน</span>',
                         'template' => '<a href="#">{label}</a>',
                         'url' => ['#'], 'items' => [
                         ['label' => 'ประเภทโครงงาน', 'url' => ['admin-project-type/index']],
                         ['label' => 'โครงงานต่อเนื่อง', 'url' => ['admin-project-continuous/index']],
-                        ['label' => 'ออกรายงาน', 'url' => ['admin-project-reporting/index']],
+                        ['label' => 'จัดกลุ่มสอบ', 'url' => ['admin-project-exam-group/index']],
                         ['label' => 'รันหมายเลขโครงงาน', 'url' => ['admin-project-running/index']],
+                        ['label' => 'ประเภทเอกสารการเผยแพร่ผลงาน', 'url' => ['admin-public-document-type/index']],
+                    ]],
+                    ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-sticky-note"></i> <span>ออกรายงาน</span>',
+                        'template' => '<a href="#">{label}</a>',
+                        'url' => ['#'], 'items' => [
+                        ['label' => 'หัวข้อโครงงาน/อาจารย์ที่ปรึกษา/ปีการศึกษา', 'url' => ['admin-reporting/index']],
+                        ['label' => 'โครงงานตามกลุ่มสอบ', 'url' => ['admin-reporting/group']],
+                        ['label' => 'โครงงานตามที่ปรึกษา', 'url' => ['admin-reporting/adviser']],
+                        ['label' => 'โครงงานตามสาขา', 'url' => ['admin-reporting/branch']],
+                        ['label' => 'โครงงานต่ออาจารย์ที่ปรึกษา', 'url' => ['admin-reporting/project-per-adviser']],
+                        ['label' => 'นักศึกษาที่ไม่ส่งหัวข้อโครงงาน', 'url' => ['admin-reporting/unsent-topic']],
+                        ['label' => 'นักศึกษาที่ยังไม่ส่งเอกสารโครงงาน', 'url' => ['admin-reporting/unsent-document']],
                     ]]
 //                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                 ],
