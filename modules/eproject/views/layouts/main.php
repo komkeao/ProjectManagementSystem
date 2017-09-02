@@ -66,7 +66,6 @@ AppAsset::register($this);
                 ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-user"></i> <span>ที่ปรึกษาโครงงาน</span>', 'template' => '<a href="#">{label}</a>', 'items' => [
                     ['label' => 'ยื่นคำร้องที่ปรึกษา', 'url' => ['adviser/request'], 'visible' => $userType == 2],
                     ['label' => 'คำร้องที่ปรึกษา', 'url' => ['adviser/requested'], 'visible' => $userType == 1],
-                    ['label' => 'สถานะที่ปรึกษา', 'url' => ['adviser/status']],
 
                     ['label' => 'ประกาศหาที่ปรึกษา', 'url' => ['adviser/broadcast']],
                     ['label' => 'แจ้งขอเปลี่ยนหัวข้อโครงงาน', 'url' => ['adviser/change-topic']],
