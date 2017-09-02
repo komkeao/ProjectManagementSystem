@@ -63,8 +63,8 @@ $this->params['breadcrumbs'][] = $this->title;
         </tbody>
     </table>
     <br>
-    <button type="button" class="btn btn-default pull-right">ดาวน์โหลด</button>
-    <button type="button" class="btn btn-default pull-right">สั่งพิมพ์</button>
+    <button type="button" class="btn btn-default pull-right"  style="width: 10%">ดาวน์โหลด</button>
+    <button type="button" class="btn btn-default pull-right"  style="width: 10%">สั่งพิมพ์</button>
 
 
 </div>
