@@ -108,7 +108,7 @@ AppAsset::register($this);
                         'template' => '<a href="#">{label}</a>',
                         'url' => ['#'], 'items' => [
                         ['label' => 'นำเข้ารายชื่อนักศึกษา', 'url' => ['admin-std/add']],
-                        ['label' => 'จัดการสิทธิ์', 'url' => ['admin-std/permission']],
+//                        ['label' => 'จัดการสิทธิ์', 'url' => ['admin-std/permission']],
                     ]],
                     ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa fa-tasks"></i> <span>โครงงาน</span>',
                         'template' => '<a href="#">{label}</a>',
