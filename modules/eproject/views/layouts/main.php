@@ -11,7 +11,7 @@ use yii\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
-$userType = 1;
+$userType = 0;
 //0 admin
 //1 teachers
 //2 student
@@ -62,14 +62,14 @@ AppAsset::register($this);
                     ['label' => 'เพิ่มโครงงาน', 'url' => ['project/add'], 'visible' => $userType == 2],
                     ['label' => 'แก้ไขข้อมูลโครงงาน', 'url' => ['project/edit'], 'visible' => $userType == 2],
                     ['label' => 'อัพโหลดเอกสารโครงงาน', 'url' => ['project/document'], 'visible' => $userType == 2],
-                    ['label' => 'รายชื่อกรรมการสอบ', 'url' => ['project/stat'], 'visible' => $userType <= 1],
+//                    ['label' => 'รายชื่อกรรมการสอบ', 'url' => ['project/stat'], 'visible' => $userType <= 1],
                 ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-user"></i> <span>ที่ปรึกษาโครงงาน</span>', 'template' => '<a href="#">{label}</a>', 'items' => [
                     ['label' => 'ยื่นคำร้องที่ปรึกษา', 'url' => ['adviser/request'], 'visible' => $userType == 2],
                     ['label' => 'คำร้องที่ปรึกษา', 'url' => ['adviser/requested'], 'visible' => $userType == 1],
 
-                    ['label' => 'ประกาศหาที่ปรึกษา', 'url' => ['adviser/broadcast']],
-                    ['label' => 'แจ้งขอเปลี่ยนหัวข้อโครงงาน', 'url' => ['adviser/change-topic']],
-                    ['label' => 'แจ้งขอเปลี่ยนที่ปรึกษา', 'url' => ['adviser/change-adviser']],
+                    ['label' => 'ประกาศหาที่ปรึกษา', 'url' => ['adviser/broadcast'], 'visible' => $userType == 1],
+                    ['label' => 'แจ้งขอเปลี่ยนหัวข้อโครงงาน', 'url' => ['adviser/change-topic'], 'visible' => $userType == 2],
+                    ['label' => 'แจ้งขอเปลี่ยนที่ปรึกษา', 'url' => ['adviser/change-adviser'], 'visible' => $userType == 2],
                     ['label' => 'สถานะที่ปรึกษา', 'url' => ['adviser/student-per-adviser']],
 
                     ['label' => 'จัดการที่ปรึกษา', 'url' => ['adviser/management'], 'visible' => $userType <=2],
