@@ -17,7 +17,7 @@ use Yii;
  */
 class Download extends \yii\db\ActiveRecord
 {
-    public $uploadFileFolder = 'uploads/downloads'; //ที่เก็บรูปภาพ
+    public $uploadFileFolder = 'uploads/eproject/downloads'; //ที่เก็บรูปภาพ
     /**
      * @inheritdoc
      */

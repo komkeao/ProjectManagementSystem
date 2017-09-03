@@ -70,7 +70,7 @@ AppAsset::register($this);
                     ['label' => 'ประกาศหาที่ปรึกษา', 'url' => ['adviser/broadcast']],
                     ['label' => 'แจ้งขอเปลี่ยนหัวข้อโครงงาน', 'url' => ['adviser/change-topic']],
                     ['label' => 'แจ้งขอเปลี่ยนที่ปรึกษา', 'url' => ['adviser/change-adviser']],
-                    ['label' => 'จำนวนโครงงานต่ออาจารย์ที่ปรึกษา', 'url' => ['adviser/student-per-adviser']],
+                    ['label' => 'สถานะที่ปรึกษา', 'url' => ['adviser/student-per-adviser']],
 
                     ['label' => 'จัดการที่ปรึกษา', 'url' => ['adviser/management'], 'visible' => $userType <=2],
                 ]], ['label' => '<i class="fa fa-menu-arrow pull-right"></i><i class="main-icon fa fa-users"></i> <span>กลุ่มสอบ</span>', 'template' => '<a href="#">{label}</a>', 'items' => [
