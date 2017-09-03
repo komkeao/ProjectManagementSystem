@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="row">
             <div class="form-group">
-                <div class="col-md-4 col-sm-4">
+                <div class="col-md-6 col-sm-6">
                     <label>สาขาวิชา *</label>
                     <select name="contact[position]" class="form-control pointer required">
 
@@ -41,9 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <option value="2">2559</option>
                     </select>
                 </div>
-                <div  class="col-md-2 col-sm-2">
-                    <br><button type="button" class="btn btn-default pull-right" ><i class="fa fa-search"></i>ตกลง</button>
-                </div>
+
 
             </div>
 
@@ -54,8 +52,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     </fieldset>
 
-
-</form>
+    <div >
+        <button type="button" class="btn btn-default pull-right" ><i class="fa fa-search"></i>ตกลง</button>
+    </div>
+</form><br><br>
 <div class="">
     <table class="table table-bordered nomargin">
         <thead>

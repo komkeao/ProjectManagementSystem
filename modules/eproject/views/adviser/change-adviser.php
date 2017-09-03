@@ -7,70 +7,33 @@ $this->title = 'แจ้งขอเปลี่ยนที่ปรึกษ�
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div>
+<br><div>
     <label>ชื่อหัวข้อโปรเจค:</label>
+        <label>ระบบรวบรวมเอกสารโครงงานและงานวิจัยคอมพิวเตอร์</label>
 
-    <input type="text" name="contact[last_name]" value=""
-           class="form-control required">
-</div>
+
+</div><br>
 <div>
     <label>อาจารย์ที่ปรึกษาเดิม:</label>
-
-    <input type="text" name="contact[last_name]" value=""
-           class="form-control required">
-</div>
+    <label>ผศ.ดร.พุธษดี ศิริแสงตระกูล</label>
+</div><br>
 <div>
     <label>อาจารย์ที่ปรึกษาใหม่:</label>
 
     <input type="text" name="contact[last_name]" value=""
            class="form-control required">
-</div>
+</div><br>
 
-<div>
-
-    <label>ชื่อนักศึกษา:</label>
-
-    <div id="box">
-
-
-
-
-        <div class='row'>
-            <div class='col-md-11 col-xs-11' style='margin-top: 5px;padding-right: 0px'>
-                <input type='text' value='' class='form-control required'>
-            </div>
-            <div class='col-md-1 col-xs-1' style='margin-top: 5px;padding: 0px;'>
-                <button id="btn2" class='btn btn-success' style='width: 80%' >เพิ่ม</button>
-            </div>
-        </div>
-
-
-    </div>
-
-</div>
-
-
-
-<div>
+    <div>
     <label>เหตุผลที่เปลี่ยน:</label>
 
-    <input type="text" name="contact[last_name]" value=""
-           class="form-control required">
-</div>
-
-<div>
-    <label>เลือกอาจารย์ที่ปรึกษา:</label>
-
-    <select multiple="multiple" class="form-control select2" style="width: 100%">
-
-        <option value="1">อ.ดร.สายยัญ สายยศ </option>
-        <option value="2">อ.ดร.นันท์นภัส เบญจมาศ </option>
-        <option value="3">ผศ.ดร.พุธษดี ศิริแสงตระกูล </option>
-    </select>
-    <i class="fancy-arrow-"></i>
+    <textarea name="contact[experience]" rows="4" class="form-control required"></textarea>
 </div>
 
 
-<br>
+
+
 <button type="button" class="btn btn-default pull-right"  >ล้างฟอร์ม</button>
-<button type="button" class="btn btn-default pull-right"  >ตกลง</button>
+        <button type="button" class="btn btn-default pull-right"  >ตกลง</button>
 
+</div>

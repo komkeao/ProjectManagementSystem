@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <label>อาจารย์:</label>
     <input type="text" name="contact[last_name]" value=""
            class="form-control required">
-</div>
+</div><br>
 
 <div>
 <label <label>สาขา:</label>
@@ -24,29 +24,29 @@ $this->params['breadcrumbs'][] = $this->title;
     </select>
     <i class="fancy-arrow-"></i>
 
-</div>
+</div><br>
 
 
 <div>
     <label>ความชำนาญการ:</label>
     <input type="text"style="height:150px"; name="contact[last_name]" value=""
            class="form-control required">
-</div>
+</div><br>
 
 <div>
 <label>รับจำนวน:</label>
 <input type="text" name="contact[last_name]" value=""
        class="form-control required">
-</div>
+</div><br>
 
 <div>
 <label>สามารถติดต่อ:</label>
 <input type="text" name="contact[last_name]" value=""
        class="form-control required">
-</div>
+</div><br>
 <div>
     <button type="button" class="btn btn-default pull-right"><i class="fa fa-send"></i>ส่ง</button>
-</div>
+</div><br>
 
 
 

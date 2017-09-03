@@ -55,6 +55,13 @@ $this->params['breadcrumbs'][] = $this->title;
 </form>
 
 
+<form class="validate" action="php/contact.php" method="post" enctype="multipart/form-data"
+      data-success="Sent! Thank you!" data-toastr-position="top-right">
+
+        <!-- required [php action request] -->
+        <input type="hidden" name="action" value="contact_send"/>
+
+<br><br>
 <div class="">
     <table class="table table-bordered nomargin">
         <thead>
@@ -117,3 +124,5 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 
 
+
+</form>

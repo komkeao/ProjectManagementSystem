@@ -8,13 +8,13 @@ $this->title = 'ยื่นคำร้องที่ปรึกษา';
 //$this->params['breadcrumbs'][] = ['label' => 'Employees', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div></div>
 <div>
+<br><div>
     <label>ชื่อโปรเจค:</label>
 
     <input type="text" name="contact[last_name]" value=""
            class="form-control required">
-</div>
+</div><br>
 
 <div>
 
@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
 
-    </div></div>
+    </div></div><br>
 
 
 <div>
@@ -41,14 +41,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <input type="text" name="contact[last_name]" value=""
            class="form-control required">
-</div>
+</div><br>
 
 <div>
     <label>ความถนัด:</label>
+    <textarea name="contact[experience]" rows="4" class="form-control required"></textarea>
 
-    <input type="text" name="contact[last_name]" value=""
-           class="form-control required">
-</div>
+
+
+</div><br>
 
 <div>
     <label>เลือกอาจารย์ที่ปรึกษา:</label>
@@ -69,5 +70,5 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 
-
+</div>
 

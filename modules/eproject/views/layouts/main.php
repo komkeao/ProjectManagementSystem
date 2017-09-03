@@ -11,7 +11,7 @@ use yii\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
-$userType = 0;
+$userType = 3;
 //0 admin
 //1 teachers
 //2 student
