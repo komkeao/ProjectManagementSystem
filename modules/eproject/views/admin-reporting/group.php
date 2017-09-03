@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="row">
             <div class="form-group">
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-8 col-sm-8">
                     <label>สาขาวิชา *</label>
                     <select name="contact[position]" class="form-control pointer required">
 
@@ -24,15 +24,31 @@ $this->params['breadcrumbs'][] = $this->title;
                         <option value="GIS">ภูมิสารสนเทศศาสตร์</option>
                     </select>
                 </div>
-                <div class="col-md-3 col-sm-3">
+                <div class="col-md-4 col-sm-4">
                     <label>ภาคการศึกษา *</label>
                     <select name="contact[position]" class="form-control pointer required">
                         <option value="1">1</option>
                         <option value="2">2</option>
                     </select>
                 </div>
-                <div class="col-md-3 col-sm-3">
-                    <label>ปีการศึกษา *</label>
+
+                <div class="col-md-8 col-sm-8">
+                    <br><label>กลุ่มสอบ *</label>
+                    <select name="contact[position]" class="form-control pointer required">
+
+                        <option value="999">1</option>
+                        <option value="CSC">2</option>
+                        <option value="ICT">3</option>
+                        <option value="GIS">4</option>
+                    </select>
+                </div>
+
+
+
+
+
+                <div class="col-md-4 col-sm-4">
+                    <br><label>ปีการศึกษา *</label>
                     <select name="contact[position]" class="form-control pointer required">
                         <option value="1">2560</option>
                         <option value="2">2559</option>
@@ -49,7 +65,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     </fieldset>
 
-    <div >
+    <br><div >
         <button type="button" class="btn btn-default pull-right" ><i class="fa fa-search"></i>ตกลง</button>
     </div>
 </form>

@@ -66,9 +66,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <table class="table table-bordered nomargin">
         <thead>
         <tr>
-            <th>ลำดับ</th>
-            <th>รหัสนักศึกษา</th>
-            <th>รายชื่อนักศึกษาที่ยังไม่ส่งเอกสารโครงงาน</th>
+            <th style="width: 10%">ลำดับ</th>
+            <th style="width: 10%">กลุ่มที่</th>
+            <th style="width: 30%">ชื่อโปรเจก</th>
+            <th style="width: 30%">รายชื่อนักศึกษาที่ยังไม่ส่งเอกสารโครงงาน</th>
+            <th style="width: 20%">หมายเหตุ</th>
+
 
 
         </tr>
@@ -76,23 +79,29 @@ $this->params['breadcrumbs'][] = $this->title;
         <tbody>
         <tr>
             <td>1</td>
-            <td>573021086-0</td>
-            <td>นางสาวคุณัญญา ยุประมี</td>
+            <td>1</td>
+            <td>ระบบแยกขยะ</td>
+            <td>นางสาวคุณัญญา ยุประมี <br>นายขี้บ่น คนไม่หล่อ</td>
+            <td>proposal</td>
 
 
 
         </tr>
         <tr>
             <td>2</td>
-            <td>573020236-0</td>
-            <td>นางสาวปภวรินท์ ศรีมีชัย</td>
+            <td>2</td>
+            <td>ระบบแยกใจ</td>
+            <td>นางสาวปภวรินท์ ศรีมีชัย <br>นายขี้บ่น คนไม่หล่อ</td>
+            <td>proposal</td>
 
 
         </tr>
         <tr>
             <td>3</td>
-            <td>573020289-3</td>
-            <td>นายคมเคียว ตั้งประเสริฐ</td>
+            <td>3</td>
+            <td>ระบบแยกกัน</td>
+            <td>นายคมเคียว ตั้งประเสริฐ <br>นายขี้บ่น คนไม่หล่อ</td>
+            <td>proposal,progress1</td>
 
 
 
@@ -100,15 +109,20 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <tr>
             <td>4</td>
-            <td>573021023-8</td>
-            <td>นางสาวสีทอง สีสวย</td>
+            <td>4</td>
+            <td>ระบบดูแลคนแก่</td>
+            <td>นางสาวสีทอง สีสวย  <br>นายขี้บ่น คนไม่หล่อ</td>
+            <td>proposal,progress1</td>
 
 
         </tr>
         <tr>
             <td>5</td>
-            <td>573021968-4</td>
-            <td>นายท๊อป ชัยแสง</td>
+            <td>5</td>
+            <td>ระบบดูแลคนเด็ก</td>
+            <td>นายท๊อป ชัยแสง<br>นายขี้บ่น คนไม่หล่อ</td>
+            <td>proposal,progress1</td>
+
 
 
         </tr>
