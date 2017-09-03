@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
        class="form-control required">
 </div>
 <div>
-    <button type="button" class="btn btn-default pull-right" style="width: 10%">ส่ง</button>
+    <button type="button" class="btn btn-default pull-right"><i class="fa fa-send"></i>ส่ง</button>
 </div>
 
 

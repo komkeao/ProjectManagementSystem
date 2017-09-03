@@ -6,48 +6,64 @@ $this->title = 'แจ้งขอเปลี่ยนหัวข้อโค�
 //$this->params['breadcrumbs'][] = ['label' => 'Employees', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="">
-    <table class="table table-bordered nomargin">
+<div>
+    <label>ชื่อหัวข้อโปรเจคเดิม:</label>
 
-        <tr>
-            <td style="width: 20%"><B>โปรเจคเรื่อง:</B><U>ระบบเอกสารโครงงานและงานวิจัยคอมพิวเตอร์</U></td>
-            <td style="width: 20%">นางสาวคุณัญญา ยุปาระมี<br>
-                นายคมเคียว ตั้งประเสริฐ</td>
-            <td>ขอเปลี่ยนหัวข้อโปรเจค<span style="background-color:yellow">จากเรื่องระบบเอกสารโครงงานและงานวิจัยคอมพิวเตอร์เป็นแอพลิเครชันช่วยเหลือคนตาบอด </span> </td>
-            <td style="width: 20%"><button type="button" class="btn btn-default pull-right" style="width: 40%">ไม่ยอมรับ</button>
-                <button type="button" class="btn btn-default pull-right" style="width: 40%">ยอมรับ</button></td>
+    <input type="text" name="contact[last_name]" value=""
+           class="form-control required">
+</div>
+<div>
+    <label>ชื่อหัวข้อโปรเจคใหม่:</label>
 
+    <input type="text" name="contact[last_name]" value=""
+           class="form-control required">
+</div>
 
+<div>
 
-        </tr>
+    <label>ชื่อนักศึกษา:</label>
 
-
-        <tr>
-            <td style="width: 20%"><B>โปรเจคเรื่อง:</B><U>เครื่องซักผ้าออนไลน์</U></td>
-            <td style="width: 20%">นางสาวดวง ใจ<br>
-                นายใย เย็น</td>
-            <td>ขอเปลี่ยนหัวข้อโปรเจค<span style="background-color:yellow">จากเรื่องระบบเอกสารโครงงานและงานวิจัยคอมพิวเตอร์เป็นแอพลิเครชันช่วยเหลือคนตาบอด </span> </td>
-            <td style="width: 20%"><button type="button" class="btn btn-default pull-right" style="width: 40%">ไม่ยอมรับ</button>
-                <button type="button" class="btn btn-default pull-right" style="width: 40%">ยอมรับ</button></td>
+    <div id="box">
 
 
 
 
-        </tr>
-        <tr>
-            <td style="width: 20%"><B>โปรเจคเรื่อง:</B><U>แอพพลิเคชันติดตามคนแก่</U></td>
-            <td style="width: 20%">นางสาวดวง ตาสวย<br>
-                นายแมว แมวหมียว</td>
-            <td>ขอเปลี่ยนหัวข้อโปรเจค<span style="background-color:yellow">จากเรื่องระบบเอกสารโครงงานและงานวิจัยคอมพิวเตอร์เป็นแอพลิเครชันช่วยเหลือคนตาบอด </span> </td>
-            <td style="width: 20%"><button type="button" class="btn btn-default pull-right" style="width: 40%">ไม่ยอมรับ</button>
-                <button type="button" class="btn btn-default pull-right" style="width: 40%">ยอมรับ</button></td>
+        <div class='row'>
+            <div class='col-md-11 col-xs-11' style='margin-top: 5px;padding-right: 0px'>
+                <input type='text' value='' class='form-control required'>
+            </div>
+            <div class='col-md-1 col-xs-1' style='margin-top: 5px;padding: 0px;'>
+                <button id="btn2" class='btn btn-success' style='width: 80%' >เพิ่ม</button>
+            </div>
+        </div>
 
 
-
-
-        </tr>
-
-
-    </table>
+    </div>
 
 </div>
+
+
+
+<div>
+    <label>เหตุผลที่เปลี่ยน:</label>
+
+    <input type="text" name="contact[last_name]" value=""
+           class="form-control required">
+</div>
+
+<div>
+    <label>เลือกอาจารย์ที่ปรึกษา:</label>
+
+    <select multiple="multiple" class="form-control select2" style="width: 100%">
+
+        <option value="1">อ.ดร.สายยัญ สายยศ </option>
+        <option value="2">อ.ดร.นันท์นภัส เบญจมาศ </option>
+        <option value="3">ผศ.ดร.พุธษดี ศิริแสงตระกูล </option>
+    </select>
+    <i class="fancy-arrow-"></i>
+</div>
+
+
+<br>
+<button type="button" class="btn btn-default pull-right"  >ล้างฟอร์ม</button>
+<button type="button" class="btn btn-default pull-right"  >ตกลง</button>
