@@ -10,11 +10,17 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div>
 <br><div>
-    <label>ชื่อโปรเจค:</label>
+    <label>ชื่อโปรเจคไทย:</label>
 
     <input type="text" name="contact[last_name]" value=""
            class="form-control required">
 </div><br>
+    <div>
+        <label>ชื่อโปรเจคอังกฤษ:</label>
+
+        <input type="text" name="contact[last_name]" value=""
+               class="form-control required">
+    </div><br>
 
 <div>
 

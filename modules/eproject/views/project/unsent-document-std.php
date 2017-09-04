@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <!-- required [php action request] -->
     <input type="hidden" name="action" value="contact_send"/>
 
-    <br><br>
+    <br>
     <div class="">
         <table class="table table-bordered nomargin">
             <thead>

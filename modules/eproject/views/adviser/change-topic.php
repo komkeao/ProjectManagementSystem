@@ -8,16 +8,27 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div>
 <div>
-    <label>ชื่อหัวข้อโปรเจคเดิม:</label>
-    <label>ระบบรวบรวมเอกสารโครงงานและงานวิจัยคอมพิวเตอร์</label>
+        <label>ชื่อหัวข้อโปรเจคปัจจุบัน(ไทย):</label>
+        <label>ระบบรวบรวมเอกสารโครงงานและงานวิจัยคอมพิวเตอร์</label>
 
-</div>
-<div><br>
-    <label>ชื่อหัวข้อโปรเจคใหม่:</label>
+    </div><br>
+    <div>
+        <label>ชื่อหัวข้อโปรเจคปัจจุบัน(อังกฤษ):</label>
+        <label>Computer Project,Seminar And Research  Methology Management System</label>
+
+    </div><br>
+<div>
+    <label>ชื่อหัวข้อโปรเจคใหม่(ไทย):</label>
 
     <input type="text" name="contact[last_name]" value=""
            class="form-control required">
 </div><br>
+    <div>
+        <label>ชื่อหัวข้อโปรเจคใหม่(อังกฤษ):</label>
+
+        <input type="text" name="contact[last_name]" value=""
+               class="form-control required">
+    </div><br>
 
     <div>
     <label>เหตุผลที่เปลี่ยน:</label>
