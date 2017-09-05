@@ -9,14 +9,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <h1><?php echo $this->title ?></h1>
 
+<br><br>
 <div class="">
     <table class="table table-bordered nomargin">
         <thead>
         <tr>
-            <th style="width: 10%">ลำดับ</th>
-            <th style="width: 10%">กลุ่มที่</th>
-            <th style="width: 30%">ชื่อโปรเจก</th>
-            <th style="width: 30%">รายชื่อนักศึกษาที่ยังไม่เพิ่มโครงงาน</th>
+            <th style="width:5%">ลำดับ</th>
+
+
+            <th style="width: 30%">รายชื่อนักศึกษาที่ยังไม่ส่งหัวข้อโครงงาน</th>
 
 
         </tr>
@@ -24,18 +25,17 @@ $this->params['breadcrumbs'][] = $this->title;
         <tbody>
         <tr>
             <td>1</td>
-            <td>1</td>
-            <td>ระบบแยกขยะ</td>
-            <td>นางสาวคุณัญญา ยุประมี <br>นายขี้บ่น คนไม่หล่อ</td>
+
+            <td>นางสาวคุณัญญา ยุประมี </td>
 
 
 
         </tr>
         <tr>
             <td>2</td>
-            <td>2</td>
-            <td>ระบบแยกใจ</td>
-            <td>นางสาวปภวรินท์ ศรีมีชัย <br>นายขี้บ่น คนไม่หล่อ</td>
+
+
+            <td>นางสาวปภวรินท์ ศรีมีชัย</td>
 
 
 
@@ -43,25 +43,25 @@ $this->params['breadcrumbs'][] = $this->title;
         </tr>
         <tr>
             <td>3</td>
-            <td>3</td>
-            <td>ระบบแยกกัน</td>
-            <td>นายคมเคียว ตั้งประเสริฐ <br>นายขี้บ่น คนไม่หล่อ</td>
+
+
+            <td>นายคมเคียว ตั้งประเสริฐ </td>
 
 
         </tr>
         <tr>
             <td>4</td>
-            <td>4</td>
-            <td>ระบบดูแลคนแก่</td>
-            <td>นางสาวสีทอง สีสวย  <br>นายขี้บ่น คนไม่หล่อ</td>
+
+
+            <td>นางสาวสีทอง สีสวย  </td>
 
 
         </tr>
         <tr>
             <td>5</td>
-            <td>5</td>
-            <td>ระบบดูแลคนเด็ก</td>
-            <td>นายท๊อป ชัยแสง<br>นายขี้บ่น คนไม่หล่อ</td>
+
+
+            <td>นายท๊อป ชัยแสง</td>
 
 
         </tr>
@@ -74,3 +74,4 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 </div>
+
