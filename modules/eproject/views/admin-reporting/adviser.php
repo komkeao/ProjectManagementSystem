@@ -7,7 +7,7 @@ $this->title = 'โครงงานตามที่ปรึกษา';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <form class="validate" action="php/contact.php" method="post" enctype="multipart/form-data"
-      data-success="Sent! Thank you!" data-toastr-position="top-right">
+             data-success="Sent! Thank you!" data-toastr-position="top-right">
     <fieldset>
         <!-- required [php action request] -->
         <input type="hidden" name="action" value="contact_send"/>
@@ -32,8 +32,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     </select>
                 </div>
 
-                 <div class="col-md-8 col-sm-8">
-                     <br><label>อาจารที่ปรึกษา *</label>
+                <div class="col-md-8 col-sm-8">
+                    <br><label>อาจารที่ปรึกษา *</label>
                     <select name="contact[position]" class="form-control pointer required">
 
                         <option value="999">อ.1</option>
@@ -66,6 +66,6 @@ $this->params['breadcrumbs'][] = $this->title;
     </fieldset>
 
     <br><div >
-        <button type="button" class="btn btn-default pull-right" ><i class="fa fa-search"></i>ตกลง</button>
+        <button type="button" class="btn btn-3d btn-teal pull-right" ><i class="fa fa-search"></i>ตกลง</button>
     </div>
 </form>

@@ -48,8 +48,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
 
                 </div>
-                <button type="button" class="btn btn-default pull-right"><i class="fa fa-search"></i>สืบค้นข้อมูล
-                </button>
+                <button type="button" class="btn btn-3d btn-teal pull-right"><i class="fa fa-search"></i>สืบค้นข้อมูล</button>
+
+
+
 
             </div><!-- /TAB 1 CONTENT -->
 
@@ -157,14 +159,31 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <!-- /panel content -->
 </div>
-<div class="text-warning">
-    <span><i>ผลการค้นหา</i></span>
+
+
+<div id="panel-misc-portlet-l1" class="panel panel-default">
+<div class="panel-heading">
+
+									<span class="elipsis"><!-- panel title -->
+										<strong> ผลการค้นหา</strong>
+									</span>
+
+    <!-- right options -->
+
+    <!-- /right options -->
+
 </div>
-<!--<div class="table-responsive">-->
+</div>
+
+<div class="panel-body">
+
+
+    <!--<div class="table-responsive">-->
 <div class="">
+
     <table class="table table-bordered nomargin">
         <thead>
-        <tr>
+        <tr  >
             <th>รูป</th>
             <th>รายละเอียด</th>
         </tr>
@@ -229,4 +248,5 @@ $this->params['breadcrumbs'][] = $this->title;
             <li><a href="#">&raquo;</a></li>
         </ul>
     </div>
+</div>
 </div>

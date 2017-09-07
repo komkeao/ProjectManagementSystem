@@ -71,8 +71,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 <br>
-<button type="button" class="btn btn-default pull-right">ล้างฟอร์ม</button>
-<button type="button" class="btn btn-default pull-right">ตกลง</button>
+<button type="button"  class="btn btn-3d btn-teal  pull-right">ล้างฟอร์ม</button>
+<button type="button"  class="btn btn-3d btn-teal  pull-right">ตกลง</button>
 
 
 

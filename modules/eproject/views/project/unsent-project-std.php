@@ -7,14 +7,13 @@ $this->params['breadcrumbs'][] =['label' => 'โครงงาน', 'url' => ['
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<h1><?php echo $this->title ?></h1>
+<h3><?php echo $this->title ?></h3>
 
-<br><br>
 <div class="">
     <table class="table table-bordered nomargin">
         <thead>
         <tr>
-            <th style="width:5%">ลำดับ</th>
+            <th style="width:3%">ลำดับ</th>
 
 
             <th style="width: 30%">รายชื่อนักศึกษาที่ยังไม่ส่งหัวข้อโครงงาน</th>
@@ -69,8 +68,8 @@ $this->params['breadcrumbs'][] = $this->title;
         </tbody>
     </table>
     <br>
-    <button type="button" class="btn btn-default pull-right" >ดาวน์โหลด</button>
-    <button type="button" class="btn btn-default pull-right" >สั่งพิมพ์</button>
+    <button type="button" class="btn btn-3d btn-teal pull-right" >ดาวน์โหลด</button>
+    <button type="button" class="btn btn-3d btn-teal pull-right" >สั่งพิมพ์</button>
 
 
 </div>

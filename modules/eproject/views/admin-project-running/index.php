@@ -66,5 +66,5 @@ $this->params['breadcrumbs'][] = $this->title;
 
     </fieldset>
     <br>
-    <?= Html::submitButton('<i class="fa fa-save"></i>สร้างรายงาน',['class' => 'btn btn-default pull-right']) ?>
+    <?= Html::submitButton('<i class="fa fa-save"></i>สร้างรายงาน',['class' => 'btn btn-3d btn-teal pull-right']) ?>
 </form>

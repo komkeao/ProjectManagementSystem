@@ -6,6 +6,8 @@ $this->title = 'จัดการที่ปรึกษา';
 //$this->params['breadcrumbs'][] = ['label' => 'Employees', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+<h3>ส่งถึงอาจารย์ที่ปรึกษา</h3>
 <div>
 <div>
     <label>เรื่อง:</label>
@@ -30,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </div><br>
 
 <div>
-<button type="button" class="btn btn-default pull-right"><i class="fa fa-send"></i>
+<button type="button" class="btn btn-3d btn-teal  pull-right"><i class="fa fa-send"></i>
     ส่ง</button>
 </div>
 

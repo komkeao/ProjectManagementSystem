@@ -44,14 +44,14 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </fieldset>
     <br>
-    <button type="button" class="btn btn-default pull-right"><i class="fa fa-search"></i>ค้นข้อมูล
+    <button type="button"class="btn btn-3d btn-teal pull-right"><i class="fa fa-search"></i>ค้นข้อมูล
     </button>
 </form>
 
 
 <div class="">
     <br><br>
-    <h3>รายชื่อชุดกรรมการกลุ่มสอบ</h3><br>
+    <h3>รายชื่อชุดกรรมการกลุ่มสอบ</h3>
 
     <table class="table table-bordered nomargin">
         <thead>
@@ -146,7 +146,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 </div>
  <div>
-     <br><br><h3>เพิ่มอาจารย์ไปที่กลุ่มสอบ</h3><br>
+     <br><br><h3>เพิ่มอาจารย์ไปที่กลุ่มสอบ</h3>
 
      <div class="col-md-6 col-sm-6">
          <label>เพิ่มอาจารย์:</label>
@@ -184,11 +184,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
  </div>
 <div class="col-md-12 col-sm-12">
-    <br><button type="button" class="btn btn-default pull-right">บันทึก</button>
+    <br><button type="button" class="btn btn-3d btn-teal pull-right">บันทึก</button>
 </div>
 
 
-<br><br><h3>เพิ่มกลุ่มสอบ</h3><br>
+<br><br><h3>เพิ่มกลุ่มสอบ</h3>
 <div class="col-md-6 col-sm-6">
     <label>ชื่อกลุ่มสอบ:</label>
 
@@ -220,7 +220,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 <div class="col-md-12 col-sm-12">
-    <br><button type="button" class="btn btn-default pull-right">บันทึก</button>
+    <br><button type="button" class="btn btn-3d btn-teal pull-right">บันทึก</button>
 </div>
 
 

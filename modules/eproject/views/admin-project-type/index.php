@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="project-type-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h3><?= Html::encode($this->title) ?></h3>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
 
@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
     <p>
-        <?= Html::a('เพิ่มประเภทโครงงาน', ['create'], ['class' => 'btn btn-default pull-right']) ?>
+        <?= Html::a('เพิ่มประเภทโครงงาน', ['create'], ['class' => 'btn btn-3d btn-teal pull-right']) ?>
     </p>
     </p>
 </div>
